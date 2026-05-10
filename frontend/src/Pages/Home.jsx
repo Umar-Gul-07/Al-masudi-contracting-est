@@ -4987,7 +4987,7 @@ const Home = () => {
                 <div className="interactive-process-item-body-wap">
                   <div className="interactive-process-item-content-wap">
                     <h3>
-                      <a href="#">Polished &amp; Honed Marble Tiles</a>
+                      <a href="products.html">Polished &amp; Honed Marble Tiles</a>
                     </h3>
                     <p>
                       Refined marble tiles available in polished and finishes,
@@ -5013,7 +5013,7 @@ const Home = () => {
                 <div className="interactive-process-item-body-wap">
                   <div className="interactive-process-item-content-wap">
                     <h3>
-                      <a href="#">Natural Marble Slabs</a>
+                      <a href="products.html">Natural Marble Slabs</a>
                     </h3>
                     <p>
                       Carefully selected natural marble slabs feature unique
@@ -5039,7 +5039,7 @@ const Home = () => {
                 <div className="interactive-process-item-body-wap">
                   <div className="interactive-process-item-content-wap">
                     <h3>
-                      <a href="#">Gloss Collections</a>
+                      <a href="products.html">Gloss Collections</a>
                     </h3>
                     <p>
                       Our Gloss Design Collections features refineding surfaces
@@ -5065,7 +5065,7 @@ const Home = () => {
                 <div className="interactive-process-item-body-wap">
                   <div className="interactive-process-item-content-wap">
                     <h3>
-                      <a href="#">Designer Pattern Tiles</a>
+                      <a href="products.html">Designer Pattern Tiles</a>
                     </h3>
                     <p>
                       Designer tiles crafted with precision patterns and refine

@@ -678,9 +678,9 @@ const BlogDetails = () => {
                 >
                   <span className="tag-links">
                     Tags:
-                    <a href="#">Design Tips</a>
-                    <a href="#">Home Styling</a>
-                    <a href="#">Space Planning</a>
+                    <a href="/blogs">Design Tips</a>
+                    <a href="/blogs">Home Styling</a>
+                    <a href="/blogs">Space Planning</a>
                   </span>
                 </div>
                 {/* Post Tags End */}
@@ -698,22 +698,22 @@ const BlogDetails = () => {
                 >
                   <ul>
                     <li>
-                      <a href="#">
+                      <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
                         <i className="fa-brands fa-facebook-f" />
                       </a>
                     </li>
                     <li>
-                      <a href="#">
+                      <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">
                         <i className="fa-brands fa-linkedin-in" />
                       </a>
                     </li>
                     <li>
-                      <a href="#">
+                      <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
                         <i className="fa-brands fa-instagram" />
                       </a>
                     </li>
                     <li>
-                      <a href="#">
+                      <a href="https://x.com/" target="_blank" rel="noopener noreferrer">
                         <i className="fa-brands fa-x-twitter" />
                       </a>
                     </li>

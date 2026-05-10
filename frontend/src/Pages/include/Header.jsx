@@ -65,15 +65,14 @@ function Header() {
         </div>
         {/* Main Menu End */}
         <div className="navbar-toggle">
-          <a
-            href="#"
+          <button
+            type="button"
             onClick={(event) => {
               event.preventDefault()
               setMobileMenuOpen((open) => !open)
             }}
             aria-haspopup="true"
-            role="button"
-            tabIndex={0}
+            aria-expanded={mobileMenuOpen}
             className={`slicknav_btn ${mobileMenuOpen ? 'slicknav_open' : 'slicknav_collapsed'}`}
             style={{}}
           >
@@ -83,7 +82,7 @@ function Header() {
               <span className="slicknav_icon-bar" />
               <span className="slicknav_icon-bar" />
             </span>
-          </a>
+          </button>
         </div>
       </div>
     </nav>
@@ -96,11 +95,10 @@ function Header() {
           style={{ display: mobileMenuOpen ? 'block' : 'none' }}
         >
           <li className="nav-item submenu slicknav_collapsed slicknav_parent">
-            <a
-              href="#"
-              role="menuitem"
+            <button
+              type="button"
+              aria-label="Home submenu"
               aria-haspopup="true"
-              tabIndex={-1}
               className="slicknav_item slicknav_row"
               style={{}}
             />
@@ -183,17 +181,16 @@ function Header() {
             </Link>
           </li>
           <li className="nav-item submenu slicknav_collapsed slicknav_parent">
-            <Link
-              to="#"
-              role="menuitem"
+            <button
+              type="button"
+              aria-label="Pages submenu"
               aria-haspopup="true"
-              tabIndex={-1}
               className="slicknav_item slicknav_row"
               style={{}}
             />
-            <Link className="nav-link" to="#" tabIndex={-1} style={linkStyle}>
+            <span className="nav-link" tabIndex={-1} style={linkStyle}>
               Pages
-            </Link>
+            </span>
             <span className="slicknav_arrow">►</span>
             <ul
               role="menu"
@@ -382,7 +379,6 @@ function Header() {
 }
 
 export default Header
-
 
 
 

@@ -1,6 +1,12 @@
 
 function Footer() {
     const WHATSAPP_NUMBER = "966508383937";
+    const SOCIAL_LINKS = {
+      pinterest: "https://www.pinterest.com/",
+      twitter: "https://x.com/",
+      facebook: "https://www.facebook.com/",
+      instagram: "https://www.instagram.com/",
+    };
 
     return (
         <>
@@ -28,22 +34,22 @@ function Footer() {
             <h2>Follow Us On Social:</h2>
             <ul>
               <li>
-                <a href="#">
+                <a href={SOCIAL_LINKS.pinterest} target="_blank" rel="noopener noreferrer">
                   <i className="fa-brands fa-pinterest-p" />
                 </a>
               </li>
               <li>
-                <a href="#">
+                <a href={SOCIAL_LINKS.twitter} target="_blank" rel="noopener noreferrer">
                   <i className="fa-brands fa-x-twitter" />
                 </a>
               </li>
               <li>
-                <a href="#">
+                <a href={SOCIAL_LINKS.facebook} target="_blank" rel="noopener noreferrer">
                   <i className="fab fa-facebook-f" />
                 </a>
               </li>
               <li>
-                <a href="#">
+                <a href={SOCIAL_LINKS.instagram} target="_blank" rel="noopener noreferrer">
                   <i className="fa-brands fa-instagram" />
                 </a>
               </li>
@@ -135,10 +141,10 @@ function Footer() {
             <div className="footer-privacy-policy">
               <ul>
                 <li>
-                  <a href="#">Privacy Policy</a>
+                  <a href="/contact">Privacy Policy</a>
                 </li>
                 <li>
-                  <a href="#">Terms &amp; Condition</a>
+                  <a href="/contact">Terms &amp; Condition</a>
                 </li>
               </ul>
             </div>
