@@ -49,7 +49,7 @@ function Header() {
                 </Link>
               </li>
               <li className="nav-item highlighted-menu">
-                <Link className="nav-link" to="/catalogue" style={linkStyle}>
+                <Link className="nav-link" to="/contact" style={linkStyle}>
                   Request a Catalogue
                 </Link>
               </li>
@@ -57,7 +57,7 @@ function Header() {
           </div>
           {/* Header Btn Start */}
           <div className="header-btn">
-            <Link className="btn-default" to="/catalogue" style={linkStyle}>
+            <Link className="btn-default" to="/contact" style={linkStyle}>
               Request a Catalogue
             </Link>
           </div>
@@ -379,6 +379,5 @@ function Header() {
 }
 
 export default Header
-
 
 
