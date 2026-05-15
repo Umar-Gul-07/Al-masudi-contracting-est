@@ -3,13 +3,16 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { StoreProvider } from './Utils/Store';
+import { LanguageProvider } from './Utils/Language';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-      <StoreProvider>
+      <LanguageProvider>
+        <StoreProvider>
         <App />
-    </StoreProvider>
+        </StoreProvider>
+      </LanguageProvider>
   </React.StrictMode>
 );
 

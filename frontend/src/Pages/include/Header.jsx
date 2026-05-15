@@ -1,9 +1,11 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { useLanguage } from '../../Utils/Language'
 
 function Header() {
   const linkStyle = { color: '#000000' }
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const { language, toggleLanguage } = useLanguage()
 
   return (
    <>
@@ -60,6 +62,14 @@ function Header() {
             <Link className="btn-default" to="/contact" style={linkStyle}>
               Request a Catalogue
             </Link>
+            <button
+              type="button"
+              className="language-toggle notranslate"
+              onClick={toggleLanguage}
+              aria-label={`Switch language to ${language === 'en' ? 'Arabic' : 'English'}`}
+            >
+              {language === 'en' ? 'AR' : 'EN'}
+            </button>
           </div>
           {/* Header Btn End */}
         </div>
@@ -365,6 +375,15 @@ function Header() {
               Request a Catalogue
             </a>
           </li>
+          <li className="nav-item">
+            <button
+              type="button"
+              className="language-toggle mobile-language-toggle notranslate"
+              onClick={toggleLanguage}
+            >
+              {language === 'en' ? 'AR' : 'EN'}
+            </button>
+          </li>
         </ul>
       </div>
     </div>
@@ -379,5 +398,3 @@ function Header() {
 }
 
 export default Header
-
-

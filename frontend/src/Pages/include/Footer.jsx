@@ -1,4 +1,6 @@
 
+import ThemeIcon from "../../Components/ThemeIcon";
+
 function Footer() {
     const WHATSAPP_NUMBER = "966508383937";
     const SOCIAL_LINKS = {
@@ -24,8 +26,8 @@ function Footer() {
           {/* About Footer Content Start */}
           <div className="about-footer-content">
             <p>
-              Serving clients over 35+ countries, deliver premium tiles and
-              marble with consistent quality and timely delivery.
+              Serving clients across Riyadh, Saudi Arabia with premium tiles
+              and marble, consistent quality, and timely delivery.
             </p>
           </div>
           {/* About Footer Content End */}
@@ -35,22 +37,22 @@ function Footer() {
             <ul>
               <li>
                 <a href={SOCIAL_LINKS.pinterest} target="_blank" rel="noopener noreferrer">
-                  <i className="fa-brands fa-pinterest-p" />
+                  <ThemeIcon name="pinterest-p" />
                 </a>
               </li>
               <li>
                 <a href={SOCIAL_LINKS.twitter} target="_blank" rel="noopener noreferrer">
-                  <i className="fa-brands fa-x-twitter" />
+                  <ThemeIcon name="x-twitter" />
                 </a>
               </li>
               <li>
                 <a href={SOCIAL_LINKS.facebook} target="_blank" rel="noopener noreferrer">
-                  <i className="fab fa-facebook-f" />
+                  <ThemeIcon name="facebook-f" />
                 </a>
               </li>
               <li>
                 <a href={SOCIAL_LINKS.instagram} target="_blank" rel="noopener noreferrer">
-                  <i className="fa-brands fa-instagram" />
+                  <ThemeIcon name="instagram" />
                 </a>
               </li>
             </ul>

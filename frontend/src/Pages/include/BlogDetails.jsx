@@ -1,4 +1,5 @@
 import React from 'react'
+import ThemeIcon from '../../Components/ThemeIcon'
 
 const BlogDetails = () => {
   return (
@@ -473,10 +474,10 @@ const BlogDetails = () => {
           >
             <ol className="breadcrumb">
               <li>
-                <i className="fa-regular fa-user" /> Admin
+                <ThemeIcon name="user" /> Admin
               </li>
               <li>
-                <i className="fa-regular fa-clock" /> 23 Jan, 2026
+                <ThemeIcon name="clock" /> 23 Jan, 2026
               </li>
             </ol>
           </div>
@@ -699,22 +700,22 @@ const BlogDetails = () => {
                   <ul>
                     <li>
                       <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
-                        <i className="fa-brands fa-facebook-f" />
+                        <ThemeIcon name="facebook-f" />
                       </a>
                     </li>
                     <li>
                       <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">
-                        <i className="fa-brands fa-linkedin-in" />
+                        <ThemeIcon name="linkedin-in" />
                       </a>
                     </li>
                     <li>
                       <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
-                        <i className="fa-brands fa-instagram" />
+                        <ThemeIcon name="instagram" />
                       </a>
                     </li>
                     <li>
                       <a href="https://x.com/" target="_blank" rel="noopener noreferrer">
-                        <i className="fa-brands fa-x-twitter" />
+                        <ThemeIcon name="x-twitter" />
                       </a>
                     </li>
                   </ul>

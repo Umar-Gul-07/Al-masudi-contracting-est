@@ -1,4 +1,5 @@
 import React from 'react'
+import ThemeIcon from '../Components/ThemeIcon'
 
 const Home = () => {
   return (
@@ -8,7 +9,7 @@ const Home = () => {
   <div className="hero-bg-video">
     {/* Selfhosted Video Start */}
     {/* <video autoplay muted loop id="herovideo"><source src="images/hero-bg-video.mp4" type="video/mp4"></video> */}
-    <video autoPlay="" muted="" playsInline="" loop="" id="myvideo">
+    <video autoPlay muted playsInline loop preload="auto" id="myvideo">
       <source
         src="https://demo.awaikenthemes.com/assets/videos/tilux-hero-video.mp4"
         type="video/mp4"
@@ -36,7 +37,7 @@ const Home = () => {
             <h1
               className="text-anime-style-3"
               data-cursor="-opaque"
-              aria-label="The leading vitrified tiles company in world"
+              aria-label="The leading vitrified tiles company in Riyadh"
               style={{ perspective: 400 }}
             >
               <div
@@ -712,7 +713,7 @@ const Home = () => {
                 className="popup-video bg-effect"
                 data-cursor-text="Play"
               >
-                <i className="fa-solid fa-play" />
+                <ThemeIcon name="play" />
               </a>
               <p>Watch Video</p>
             </div>
@@ -1507,7 +1508,7 @@ const Home = () => {
               >
                 <ul>
                   <li>Continuously invest a advance technology</li>
-                  <li>Global quality standard offering durability</li>
+                  <li>Riyadh-ready quality standards built for lasting durability</li>
                 </ul>
               </div>
               {/* About Us Body list End */}
@@ -3219,7 +3220,7 @@ const Home = () => {
             {/* Satisfy Client Content Start */}
             <div className="satisfy-client-content">
               <p>
-                Chosen by 2,000+ Clients Worldwide for Premium Tiles &amp;
+                Chosen by 2,000+ Clients in Riyadh for Premium Tiles &amp;
                 Marble Quality
               </p>
             </div>
@@ -3288,14 +3289,14 @@ const Home = () => {
                 <h2>
                   <span>100</span>+
                 </h2>
-                <h3>Global Presence</h3>
+                <h3>Riyadh Focus</h3>
               </div>
               {/* Why Choose Counter Content End */}
               {/* Why Choose Item Content Start */}
               <div className="why-choose-item-content">
                 <p>
-                  Our global network allows us to serve customers across with
-                  high quality tiles.
+                  We currently serve homes, villas, and commercial projects
+                  across Riyadh with high-quality tiles.
                 </p>
               </div>
               {/* Why Choose Item Content End */}
@@ -3317,7 +3318,7 @@ const Home = () => {
                   <img src="images/icon-why-choose-us-item-1.svg" alt="" />
                 </div>
                 <div className="why-choose-item-title">
-                  <h3>Exporting Tiles Across a Global Network</h3>
+                  <h3>Supplying Tiles Across Riyadh</h3>
                 </div>
               </div>
               {/* Why Choose Item Header End */}
@@ -4917,13 +4918,13 @@ const Home = () => {
                   <img src="images/icon-product-qualities-item-3.svg" alt="" />
                 </div>
                 <div className="product-qualities-item-title">
-                  <h3>80+ Global Reach</h3>
+                  <h3>Riyadh Service Area</h3>
                 </div>
               </div>
               <div className="product-qualities-item-content">
                 <p>
-                  Our global reach spans 80+ countries, allowing us to provide
-                  high quality.
+                  Our team currently supports tile and marble requirements
+                  across Riyadh, Saudi Arabia.
                 </p>
               </div>
             </div>
@@ -5155,11 +5156,11 @@ const Home = () => {
                   <span className="counter">4.9</span>/5
                 </h3>
                 <div className="core-features-cta-rating">
-                  <i className="fa fa-solid fa-star" />
-                  <i className="fa fa-solid fa-star" />
-                  <i className="fa fa-solid fa-star" />
-                  <i className="fa fa-solid fa-star" />
-                  <i className="fa fa-solid fa-star" />
+                  <ThemeIcon name="star" />
+                  <ThemeIcon name="star" />
+                  <ThemeIcon name="star" />
+                  <ThemeIcon name="star" />
+                  <ThemeIcon name="star" />
                 </div>
               </div>
               <div className="core-features-cta-content">
@@ -6753,7 +6754,7 @@ const Home = () => {
               <h2>
                 <span className="counter">50</span>+
               </h2>
-              <p>Global Warehousing Hubs</p>
+              <p>Riyadh Supply Hubs</p>
             </div>
           </div>
           {/* CTA Box Counter Item End */}
@@ -6766,7 +6767,7 @@ const Home = () => {
               <h2>
                 <span className="counter">3500</span>+
               </h2>
-              <p>Global Projects Completed</p>
+              <p>Riyadh Projects Completed</p>
             </div>
           </div>
           {/* CTA Box Counter Item End */}
@@ -6779,7 +6780,7 @@ const Home = () => {
               <h2>
                 <span className="counter">150</span>+
               </h2>
-              <p>Authorized Global Distributors</p>
+              <p>Authorized Riyadh Supply Partners</p>
             </div>
           </div>
           {/* CTA Box Counter Item End */}
@@ -6802,12 +6803,12 @@ const Home = () => {
             className="section-sub-title wow fadeInUp"
             style={{ visibility: "visible", animationName: "fadeInUp" }}
           >
-            Our Global Footprint
+            Our Riyadh Presence
           </span>
           <h2
             className="text-anime-style-3"
             data-cursor="-opaque"
-            aria-label="Trusted by partners and projects worldwide"
+              aria-label="Trusted by partners and projects in Riyadh"
             style={{ perspective: 400 }}
           >
             <div
@@ -7397,8 +7398,8 @@ const Home = () => {
           >
             <p>
               Our expertise and commitment to excellence have earned the trust
-              of clients and collaborators worldwide, delivering successful
-              outcomes across diverse.
+              of clients and collaborators across Riyadh, delivering successful
+              outcomes for residential and commercial spaces.
             </p>
           </div>
           {/* Section Title Content End */}
@@ -7439,14 +7440,14 @@ const Home = () => {
                 </h2>
               </div>
               <div className="partners-item-counter-content">
-                <h3>Global Support Available</h3>
+                <h3>Riyadh Support Available</h3>
               </div>
             </div>
           </div>
           <div className="partners-item-content">
             <p>
-              Our dedicated support team is available around the clock to assist
-              clients across the globe.
+              Our dedicated support team is available to assist clients across
+              Riyadh with fast and reliable coordination.
             </p>
           </div>
         </div>
@@ -7516,7 +7517,7 @@ const Home = () => {
           <div className="partners-item-content">
             <p>
               Our commitment to excellence and innovation has been recognized by
-              industry leaders worldwide.
+              project partners across Riyadh.
             </p>
           </div>
         </div>
@@ -8010,11 +8011,11 @@ const Home = () => {
                   </div>
                   <div className="testimonial-item-body">
                     <div className="testimonial-item-rating">
-                      <i className="fa-solid fa-star" />
-                      <i className="fa-solid fa-star" />
-                      <i className="fa-solid fa-star" />
-                      <i className="fa-solid fa-star" />
-                      <i className="fa-solid fa-star" />
+                      <ThemeIcon name="star" />
+                      <ThemeIcon name="star" />
+                      <ThemeIcon name="star" />
+                      <ThemeIcon name="star" />
+                      <ThemeIcon name="star" />
                     </div>
                     <div className="testimonial-item-content">
                       <p>
@@ -8052,11 +8053,11 @@ const Home = () => {
                   </div>
                   <div className="testimonial-item-body">
                     <div className="testimonial-item-rating">
-                      <i className="fa-solid fa-star" />
-                      <i className="fa-solid fa-star" />
-                      <i className="fa-solid fa-star" />
-                      <i className="fa-solid fa-star" />
-                      <i className="fa-solid fa-star" />
+                      <ThemeIcon name="star" />
+                      <ThemeIcon name="star" />
+                      <ThemeIcon name="star" />
+                      <ThemeIcon name="star" />
+                      <ThemeIcon name="star" />
                     </div>
                     <div className="testimonial-item-content">
                       <p>
@@ -8094,11 +8095,11 @@ const Home = () => {
                   </div>
                   <div className="testimonial-item-body">
                     <div className="testimonial-item-rating">
-                      <i className="fa-solid fa-star" />
-                      <i className="fa-solid fa-star" />
-                      <i className="fa-solid fa-star" />
-                      <i className="fa-solid fa-star" />
-                      <i className="fa-solid fa-star" />
+                      <ThemeIcon name="star" />
+                      <ThemeIcon name="star" />
+                      <ThemeIcon name="star" />
+                      <ThemeIcon name="star" />
+                      <ThemeIcon name="star" />
                     </div>
                     <div className="testimonial-item-content">
                       <p>
@@ -8136,11 +8137,11 @@ const Home = () => {
                   </div>
                   <div className="testimonial-item-body">
                     <div className="testimonial-item-rating">
-                      <i className="fa-solid fa-star" />
-                      <i className="fa-solid fa-star" />
-                      <i className="fa-solid fa-star" />
-                      <i className="fa-solid fa-star" />
-                      <i className="fa-solid fa-star" />
+                      <ThemeIcon name="star" />
+                      <ThemeIcon name="star" />
+                      <ThemeIcon name="star" />
+                      <ThemeIcon name="star" />
+                      <ThemeIcon name="star" />
                     </div>
                     <div className="testimonial-item-content">
                       <p>

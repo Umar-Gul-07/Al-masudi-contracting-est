@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import ThemeIcon from '../Components/ThemeIcon'
 
 const Blogs = () => {
   return (
@@ -430,7 +431,7 @@ const Blogs = () => {
           <ul className="pagination">
             <li>
               <Link to="#">
-                <i className="fa-solid fa-angle-left" />
+                <ThemeIcon name="angle-left" />
               </Link>
             </li>
             <li className="active">
@@ -444,7 +445,7 @@ const Blogs = () => {
             </li>
             <li>
               <Link to="#">
-                <i className="fa-solid fa-angle-right" />
+                <ThemeIcon name="angle-right" />
               </Link>
             </li>
           </ul>

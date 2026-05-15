@@ -1,7 +1,7 @@
 const ContactInfo = {
     contact_phone: "+923029677678",
     contact_email: "zararanwar1234321@gmail.com",
-    address: `24°40'50.7"N 46°42'34.7"E`,
+    address: `24 40'50.7"N, 46 42'34.7"E`,
     facebook: "https://facebook.com",
     twitter: "https://facebook.com",
     linkedin: "https://facebook.com",

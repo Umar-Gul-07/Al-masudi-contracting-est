@@ -1,4 +1,5 @@
 import React from 'react'
+import ThemeIcon from '../Components/ThemeIcon'
 
 const About = () => {
   return (
@@ -936,7 +937,7 @@ const About = () => {
               >
                 <ul>
                   <li>Continuously invest a advance technology</li>
-                  <li>Global quality standard offering durability</li>
+                  <li>Riyadh-ready quality standards built for lasting durability</li>
                 </ul>
               </div>
               {/* About Us Body list End */}
@@ -2552,7 +2553,7 @@ const About = () => {
             {/* Satisfy Client Content Start */}
             <div className="satisfy-client-content">
               <p>
-                Chosen by 2,000+ Clients Worldwide for Premium Tiles &amp;
+                Chosen by 2,000+ Clients in Riyadh for Premium Tiles &amp;
                 Marble Quality
               </p>
             </div>
@@ -2621,14 +2622,14 @@ const About = () => {
                 <h2>
                   <span>100</span>+
                 </h2>
-                <h3>Global Presence</h3>
+                <h3>Riyadh Focus</h3>
               </div>
               {/* Why Choose Counter Content End */}
               {/* Why Choose Item Content Start */}
               <div className="why-choose-item-content">
                 <p>
-                  Our global network allows us to serve customers across with
-                  high quality tiles.
+                  We currently serve homes, villas, and commercial projects
+                  across Riyadh with high-quality tiles.
                 </p>
               </div>
               {/* Why Choose Item Content End */}
@@ -2650,7 +2651,7 @@ const About = () => {
                   <img src="images/icon-why-choose-us-item-1.svg" alt="" />
                 </div>
                 <div className="why-choose-item-title">
-                  <h3>Exporting Tiles Across a Global Network</h3>
+                  <h3>Supplying Tiles Across Riyadh</h3>
                 </div>
               </div>
               {/* Why Choose Item Header End */}
@@ -4381,13 +4382,13 @@ const About = () => {
                   <img src="images/icon-product-qualities-item-3.svg" alt="" />
                 </div>
                 <div className="product-qualities-item-title">
-                  <h3>80+ Global Reach</h3>
+                  <h3>Riyadh Service Area</h3>
                 </div>
               </div>
               <div className="product-qualities-item-content">
                 <p>
-                  Our global reach spans 80+ countries, allowing us to provide
-                  high quality.
+                  Our team currently supports tile and marble requirements
+                  across Riyadh, Saudi Arabia.
                 </p>
               </div>
             </div>
@@ -4467,11 +4468,11 @@ const About = () => {
                   <span className="counter">3.0</span>/5
                 </h3>
                 <div className="core-features-cta-rating">
-                  <i className="fa fa-solid fa-star" />
-                  <i className="fa fa-solid fa-star" />
-                  <i className="fa fa-solid fa-star" />
-                  <i className="fa fa-solid fa-star" />
-                  <i className="fa fa-solid fa-star" />
+                  <ThemeIcon name="star" />
+                  <ThemeIcon name="star" />
+                  <ThemeIcon name="star" />
+                  <ThemeIcon name="star" />
+                  <ThemeIcon name="star" />
                 </div>
               </div>
               <div className="core-features-cta-content">
@@ -6066,7 +6067,7 @@ const About = () => {
               <h2>
                 <span className="counter">31</span>+
               </h2>
-              <p>Global Warehousing Hubs</p>
+              <p>Riyadh Supply Hubs</p>
             </div>
           </div>
           {/* CTA Box Counter Item End */}
@@ -6079,7 +6080,7 @@ const About = () => {
               <h2>
                 <span className="counter">2163</span>+
               </h2>
-              <p>Global Projects Completed</p>
+              <p>Riyadh Projects Completed</p>
             </div>
           </div>
           {/* CTA Box Counter Item End */}
@@ -6092,7 +6093,7 @@ const About = () => {
               <h2>
                 <span className="counter">92</span>+
               </h2>
-              <p>Authorized Global Distributors</p>
+              <p>Authorized Riyadh Supply Partners</p>
             </div>
           </div>
           {/* CTA Box Counter Item End */}
