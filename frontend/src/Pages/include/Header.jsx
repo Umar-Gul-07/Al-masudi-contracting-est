@@ -278,17 +278,6 @@ function Header() {
                 <a
                   className="nav-link"
                   style={linkStyle}
-                  href="export.html"
-                  role="menuitem"
-                  tabIndex={-1}
-                >
-                  Export
-                </a>
-              </li>
-              <li className="nav-item">
-                <a
-                  className="nav-link"
-                  style={linkStyle}
                   href="pricing.html"
                   role="menuitem"
                   tabIndex={-1}

@@ -4288,9 +4288,8 @@ const About = () => {
                 animationName: "fadeInUp"
               }}
             >
-              Our tiles and marble are crafted to the highest standards,
-              combining precision manufacture, rigorous quality checks, and
-              superior materials.
+              We focus on careful installation, accurate finishing, and
+              dependable workmanship to deliver clean and lasting results.
             </p>
           </div>
           {/* Section title End */}
@@ -5150,9 +5149,8 @@ const About = () => {
                 animationName: "fadeInUp"
               }}
             >
-              Our tiles and marble surfaces are engineered advance manufacturing
-              technique to deliver consistent strength, durability, &amp;
-              long-term performance.
+              We use proven installation methods to deliver clean alignment,
+              durable finishes, and reliable long-term performance.
             </p>
           </div>
           {/* Section title End */}
@@ -6855,7 +6853,7 @@ const About = () => {
                   aria-expanded="false"
                   aria-controls="collapse1"
                 >
-                  Q1. What types of tiles and marble do you manufacture?
+                  Q1. What types of tile and marble installation do you offer?
                 </button>
               </h2>
               <div
@@ -6935,7 +6933,7 @@ const About = () => {
                   aria-controls="collapse3"
                 >
                   Q3. Do you follow quality control standards during
-                  manufacturing?
+                  installation?
                 </button>
               </h2>
               <div

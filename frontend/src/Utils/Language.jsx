@@ -22,7 +22,7 @@ const HEADING_TRANSLATIONS = {
   "Quality, craftsmanship, and reliability you can trust": "جودة وحرفية وموثوقية يمكنك الاعتماد عليها",
   "Reliable features built for lasting performance": "مزايا موثوقة مصممة لأداء يدوم",
   "Talk to us today": "تحدث معنا اليوم",
-  "The leading vitrified tiles company in Riyadh": "الشركة الرائدة في بلاط البورسلان في الرياض",
+  "Professional tile and marble installation in Riyadh": "خدمات تركيب البلاط والرخام باحترافية في الرياض",
   "The standards that make our tile & marble exceptional": "المعايير التي تجعل بلاطنا ورخامنا استثنائيين",
   "Tile expo & design showcase 2026": "معرض البلاط والتصميم 2026",
   "Timeless tiles & marble designs": "تصاميم بلاط ورخام خالدة",

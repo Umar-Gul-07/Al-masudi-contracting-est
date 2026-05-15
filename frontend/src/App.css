@@ -34,6 +34,45 @@
   vertical-align: middle;
 }
 
+.whatsapp-prompt-bubble {
+  position: absolute;
+  right: 72px;
+  bottom: 8px;
+  min-width: 220px;
+  max-width: 290px;
+  background: #ffffff;
+  color: #1f2937;
+  border-radius: 18px;
+  padding: 12px 14px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.16);
+  font-size: 13px;
+  line-height: 1.5;
+  animation: whatsappPromptIn 0.35s ease;
+}
+
+.whatsapp-prompt-bubble::after {
+  content: "";
+  position: absolute;
+  right: -7px;
+  bottom: 18px;
+  width: 14px;
+  height: 14px;
+  background: #ffffff;
+  transform: rotate(45deg);
+}
+
+@keyframes whatsappPromptIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 #google_translate_element,
 .goog-logo-link,
 .goog-te-gadget span,
@@ -80,4 +119,15 @@ body {
 .rtl-layout a[title="WhatsApp"] {
   right: auto !important;
   left: 24px !important;
+}
+
+.rtl-layout .whatsapp-prompt-bubble {
+  right: auto;
+  left: 72px;
+  text-align: right;
+}
+
+.rtl-layout .whatsapp-prompt-bubble::after {
+  right: auto;
+  left: -7px;
 }

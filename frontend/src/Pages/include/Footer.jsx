@@ -1,14 +1,39 @@
-
+import React, { useEffect, useState } from "react";
 import ThemeIcon from "../../Components/ThemeIcon";
+import { useLanguage } from "../../Utils/Language";
 
 function Footer() {
     const WHATSAPP_NUMBER = "966508383937";
+    const { language } = useLanguage();
+    const [activePrompt, setActivePrompt] = useState(0);
     const SOCIAL_LINKS = {
       pinterest: "https://www.pinterest.com/",
       twitter: "https://x.com/",
       facebook: "https://www.facebook.com/",
       instagram: "https://www.instagram.com/",
     };
+    const prompts =
+      language === "ar"
+        ? [
+            "مرحبا بك، كيف نقدر نخدمك في تركيب البلاط والرخام؟",
+            "راسلنا على واتساب لحجز معاينة أو طلب خدمة التركيب في الرياض.",
+          ]
+        : [
+            "Welcome. How can we help with your tile and marble installation?",
+            "Message us on WhatsApp to book a site visit or installation service in Riyadh.",
+          ];
+
+    useEffect(() => {
+      const firstPrompt = window.setTimeout(() => setActivePrompt(1), 4000);
+      const secondPrompt = window.setTimeout(() => setActivePrompt(2), 9500);
+      const hidePrompt = window.setTimeout(() => setActivePrompt(0), 18000);
+
+      return () => {
+        window.clearTimeout(firstPrompt);
+        window.clearTimeout(secondPrompt);
+        window.clearTimeout(hidePrompt);
+      };
+    }, [language]);
 
     return (
         <>
@@ -26,8 +51,8 @@ function Footer() {
           {/* About Footer Content Start */}
           <div className="about-footer-content">
             <p>
-              Serving clients across Riyadh, Saudi Arabia with premium tiles
-              and marble, consistent quality, and timely delivery.
+              Serving clients across Riyadh, Saudi Arabia with expert tile and
+              marble installation for homes, villas, and interior spaces.
             </p>
           </div>
           {/* About Footer Content End */}
@@ -136,7 +161,7 @@ function Footer() {
           <div className="footer-policy-info-box">
             {/* Footer Policy Box Title Start */}
             <div className="footer-policy-box-title">
-              <h3>Premium Tiles &amp; Marble Manufacturing Excellence</h3>
+              <h3>Professional Tile &amp; Marble Installation Services</h3>
             </div>
             {/* Footer Policy Box Title End */}
             {/* Footer Privacy Policy Start */}
@@ -190,6 +215,11 @@ function Footer() {
     textDecoration: "none",
   }}
 >
+  {activePrompt > 0 && (
+    <span className="whatsapp-prompt-bubble">
+      {prompts[activePrompt - 1]}
+    </span>
+  )}
   <svg
     aria-hidden="true"
     viewBox="0 0 32 32"

@@ -37,7 +37,7 @@ const Home = () => {
             <h1
               className="text-anime-style-3"
               data-cursor="-opaque"
-              aria-label="The leading vitrified tiles company in Riyadh"
+              aria-label="Professional tile and marble installation in Riyadh"
               style={{ perspective: 400 }}
             >
               <div
@@ -657,9 +657,9 @@ const Home = () => {
             style={{ visibility: "visible", animationName: "fadeInUp" }}
           >
             <p>
-              Our tiles and marble are crafted with precision to meet the
-              evolving needs of architecture &amp; interior design offering
-              elegant textures.
+              We install tiles and marble with precision for homes and interior
+              spaces across Riyadh, delivering clean finishes and elegant
+              results.
             </p>
           </div>
           {/* Hero Body Content End */}
@@ -701,7 +701,7 @@ const Home = () => {
               {/* Satisfy Client Images End */}
               {/* Satisfy Client Content Start */}
               <div className="satisfy-client-content">
-                <p>Chosen by 2K+ Client Superior Surfaces.</p>
+                <p>Trusted by homeowners in Riyadh for quality installation.</p>
               </div>
               {/* Satisfy Client Content End */}
             </div>
@@ -4824,9 +4824,8 @@ const Home = () => {
                 animationName: "fadeInUp"
               }}
             >
-              Our tiles and marble are crafted to the highest standards,
-              combining precision manufacture, rigorous quality checks, and
-              superior materials.
+              We focus on careful installation, accurate finishing, and
+              dependable workmanship to deliver clean and lasting results.
             </p>
           </div>
           {/* Section title End */}
@@ -5838,9 +5837,8 @@ const Home = () => {
                 animationName: "fadeInUp"
               }}
             >
-              Our tiles and marble surfaces are engineered advance manufacturing
-              technique to deliver consistent strength, durability, &amp;
-              long-term performance.
+              We use proven installation methods to deliver clean alignment,
+              durable finishes, and reliable long-term performance.
             </p>
           </div>
           {/* Section title End */}
