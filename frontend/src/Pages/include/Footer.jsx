@@ -1,39 +1,43 @@
-import React, { useEffect, useState } from "react";
+import React, { useMemo, useState } from "react";
 import ThemeIcon from "../../Components/ThemeIcon";
 import { useLanguage } from "../../Utils/Language";
 
 function Footer() {
     const WHATSAPP_NUMBER = "966508383937";
     const { language } = useLanguage();
-    const [activePrompt, setActivePrompt] = useState(0);
+    const [isPromptOpen, setIsPromptOpen] = useState(false);
+    const [hasUnreadPrompt, setHasUnreadPrompt] = useState(true);
     const SOCIAL_LINKS = {
       pinterest: "https://www.pinterest.com/",
       twitter: "https://x.com/",
       facebook: "https://www.facebook.com/",
       instagram: "https://www.instagram.com/",
     };
-    const prompts =
-      language === "ar"
-        ? [
-            "مرحبا بك، كيف نقدر نخدمك في تركيب البلاط والرخام؟",
-            "راسلنا على واتساب لحجز معاينة أو طلب خدمة التركيب في الرياض.",
-          ]
-        : [
-            "Welcome. How can we help with your tile and marble installation?",
-            "Message us on WhatsApp to book a site visit or installation service in Riyadh.",
-          ];
+    const promptContent = useMemo(
+      () =>
+        language === "ar"
+          ? {
+              greeting: "مرحبا بك، كيف نقدر نخدمك في تركيب البلاط والرخام؟",
+              service: "راسلنا على واتساب لحجز معاينة أو طلب خدمة التركيب في الرياض.",
+              cta: "ابدأ المحادثة",
+            }
+          : {
+              greeting: "Welcome. How can we help with your tile and marble installation?",
+              service: "Message us on WhatsApp to book a site visit or installation service in Riyadh.",
+              cta: "Start Chat",
+            },
+      [language]
+    );
 
-    useEffect(() => {
-      const firstPrompt = window.setTimeout(() => setActivePrompt(1), 4000);
-      const secondPrompt = window.setTimeout(() => setActivePrompt(2), 9500);
-      const hidePrompt = window.setTimeout(() => setActivePrompt(0), 18000);
+    const whatsappLink = `https://wa.me/${WHATSAPP_NUMBER}`;
 
-      return () => {
-        window.clearTimeout(firstPrompt);
-        window.clearTimeout(secondPrompt);
-        window.clearTimeout(hidePrompt);
-      };
-    }, [language]);
+    const handleWhatsappClick = (event) => {
+      if (!isPromptOpen) {
+        event.preventDefault();
+        setIsPromptOpen(true);
+        setHasUnreadPrompt(false);
+      }
+    };
 
     return (
         <>
@@ -193,11 +197,12 @@ function Footer() {
 </footer>
 
 <a
-  href={`https://wa.me/${WHATSAPP_NUMBER}`}
+  href={whatsappLink}
   target="_blank"
   rel="noopener noreferrer"
   title="WhatsApp"
   aria-label="WhatsApp chat"
+  onClick={handleWhatsappClick}
   style={{
     position: "fixed",
     bottom: 24,
@@ -215,9 +220,12 @@ function Footer() {
     textDecoration: "none",
   }}
 >
-  {activePrompt > 0 && (
+  {hasUnreadPrompt && <span className="whatsapp-notification-dot" />}
+  {isPromptOpen && (
     <span className="whatsapp-prompt-bubble">
-      {prompts[activePrompt - 1]}
+      <strong className="whatsapp-prompt-title">{promptContent.greeting}</strong>
+      <span className="whatsapp-prompt-text">{promptContent.service}</span>
+      <span className="whatsapp-prompt-cta">{promptContent.cta}</span>
     </span>
   )}
   <svg
