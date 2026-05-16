@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const EventSingle = () => {
   return (
@@ -440,10 +441,10 @@ const EventSingle = () => {
           >
             <ol className="breadcrumb">
               <li className="breadcrumb-item">
-                <a href="index-2.html">home</a>
+                <Link to="/">Home</Link>
               </li>
               <li className="breadcrumb-item">
-                <a href="events.html">Events</a>
+                <Link to="/events">Events</Link>
               </li>
               <li className="breadcrumb-item active" aria-current="page">
                 Events Details

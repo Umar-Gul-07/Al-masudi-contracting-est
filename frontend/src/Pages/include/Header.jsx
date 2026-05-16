@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { FaLanguage } from 'react-icons/fa6'
 import { useLanguage } from '../../Utils/Language'
 
 function Header() {
   const linkStyle = { color: '#000000' }
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const { language, toggleLanguage } = useLanguage()
+  const { language, setLanguage } = useLanguage()
 
   return (
    <>
@@ -62,14 +63,25 @@ function Header() {
             <Link className="btn-default" to="/contact" style={linkStyle}>
               Request a Catalogue
             </Link>
-            <button
-              type="button"
-              className="language-toggle notranslate"
-              onClick={toggleLanguage}
-              aria-label={`Switch language to ${language === 'en' ? 'Arabic' : 'English'}`}
-            >
-              {language === 'en' ? 'AR' : 'EN'}
-            </button>
+            <div className="language-switcher notranslate" aria-label="Language switcher">
+              <span className="language-switcher-icon" aria-hidden="true">
+                <FaLanguage />
+              </span>
+              <button
+                type="button"
+                className={`language-toggle ${language === 'ar' ? 'is-active' : ''}`}
+                onClick={() => setLanguage('ar')}
+              >
+                Arabic
+              </button>
+              <button
+                type="button"
+                className={`language-toggle ${language === 'en' ? 'is-active' : ''}`}
+                onClick={() => setLanguage('en')}
+              >
+                English
+              </button>
+            </div>
           </div>
           {/* Header Btn End */}
         </div>
@@ -365,13 +377,25 @@ function Header() {
             </a>
           </li>
           <li className="nav-item">
-            <button
-              type="button"
-              className="language-toggle mobile-language-toggle notranslate"
-              onClick={toggleLanguage}
-            >
-              {language === 'en' ? 'AR' : 'EN'}
-            </button>
+            <div className="language-switcher mobile-language-switcher notranslate">
+              <span className="language-switcher-icon" aria-hidden="true">
+                <FaLanguage />
+              </span>
+              <button
+                type="button"
+                className={`language-toggle ${language === 'ar' ? 'is-active' : ''}`}
+                onClick={() => setLanguage('ar')}
+              >
+                Arabic
+              </button>
+              <button
+                type="button"
+                className={`language-toggle ${language === 'en' ? 'is-active' : ''}`}
+                onClick={() => setLanguage('en')}
+              >
+                English
+              </button>
+            </div>
           </li>
         </ul>
       </div>
