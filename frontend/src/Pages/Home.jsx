@@ -1,7 +1,129 @@
 import React from 'react'
 import ThemeIcon from '../Components/ThemeIcon'
+import { useLanguage } from '../Utils/Language'
+
+const HOME_COPY = {
+  en: {
+    heroEyebrow: 'Crafting Timeless Stone Surfaces',
+    heroTrust: 'Trusted by homeowners in Riyadh for quality installation.',
+    watchVideo: 'Watch Video',
+    exploreCollection: 'Explore Our Collection',
+    moreAboutUs: 'More About Us',
+    getFreeQuote: 'Get Free Quote',
+    learnMore: 'Learn More',
+    viewProducts: 'View Products',
+    viewProduct: 'View Product',
+    contactUsToday: 'Contact Us Today',
+    latestBlogs: 'Latest Blogs',
+    livingRoomTiles: 'Living Room Tiles',
+    livingRoomTilesDesc: 'Transform your living space with tiles that combine style.',
+    kitchenTiles: 'Kitchen Tiles',
+    kitchenTilesDesc:
+      'Designed for both style & practicality, our kitchen tiles resist spills.',
+    bathroomTiles: 'Bathroom Tiles',
+    decorCarvingGlossy: 'Décor Carving Glossy',
+    glossyEndless: 'Glossy Endless',
+    statuarioMarbleLook: 'Statuario Marble Look',
+    statuarioMarbleLookDesc:
+      'Statuario marble look surfaces inspired by classic Italian marble, featuring soft white tones.',
+    partnerSuppliers: 'Partnering with Trusted Suppliers and Industry Experts',
+    clientSatisfactionRate: 'Client Satisfaction Rate',
+    highlyEquipped: '50+ Highly Equipped',
+    highlyEquippedDesc:
+      'With 50+ highly equipped units & advanced machinery, we ensure precision.',
+    skilledExperts: '100+ Skilled Experts',
+    riyadhServiceArea: 'Riyadh Service Area',
+    yearsExperience: '25+ Years Experience',
+    basedOnReviews: 'Based on 2500 reviews',
+    naturalMarbleSlabs: 'Natural Marble Slabs',
+    naturalMarbleSlabsDesc:
+      'Carefully selected natural marble slabs feature unique veining and premium finishes.',
+    glossCollections: 'Gloss Collections',
+    designerPatternTiles: 'Designer Pattern Tiles',
+    riyadhFocus: 'Riyadh Focus',
+    supplyingTilesAcrossRiyadh: 'Supplying Tiles Across Riyadh',
+    riyadhSupportAvailable: 'Riyadh Support Available',
+    customerSatisfactionRate: 'Customer Satisfaction Rate',
+    awardsRecognitions: 'Awards & Recognitions',
+    needHelpCallUs: 'Need Any Help? Call Us',
+    riyadhSupplyHubs: 'Riyadh Supply Hubs',
+    riyadhProjectsCompleted: 'Riyadh Projects Completed',
+    authorizedRiyadhPartners: 'Authorized Riyadh Supply Partners',
+    blogTitleOne: 'How to Choose the Right Modern & Functional Interior Spaces',
+    blogTitleTwo: 'Understanding Tile Finishes: Glossy, Matte, & Textured Surfaces',
+    blogTitleThree: 'Top Tile Trends That Are Redefining Modern Interiors',
+    testimonialRoleOne: 'Construction Consultant',
+    testimonialRoleTwo: 'Penthouse Owner',
+    testimonialRoleThree: 'Construction Consultant',
+    testimonialRoleFour: 'Architect, UK',
+    testimonialNameOne: 'Kristin Watson',
+    testimonialNameTwo: 'Esther Howard',
+    testimonialNameThree: 'Floyd Miles',
+    testimonialNameFour: 'John Richardson',
+  },
+  ar: {
+    heroEyebrow: 'نشكّل أسطحًا حجرية خالدة',
+    heroTrust: 'يحظى بثقة أصحاب المنازل في الرياض لجودة التركيب.',
+    watchVideo: 'مشاهدة الفيديو',
+    exploreCollection: 'استكشف مجموعتنا',
+    moreAboutUs: 'اعرف المزيد عنا',
+    getFreeQuote: 'احصل على عرض سعر مجاني',
+    learnMore: 'اعرف المزيد',
+    viewProducts: 'عرض المنتجات',
+    viewProduct: 'عرض المنتج',
+    contactUsToday: 'تواصل معنا اليوم',
+    latestBlogs: 'أحدث المدونات',
+    livingRoomTiles: 'بلاط غرف المعيشة',
+    livingRoomTilesDesc: 'حوّل مساحة معيشتك ببلاط يجمع بين الأناقة.',
+    kitchenTiles: 'بلاط المطابخ',
+    kitchenTilesDesc: 'مصمم للأناقة والعملية، ويقاوم بلاط المطابخ لدينا الانسكابات.',
+    bathroomTiles: 'بلاط الحمامات',
+    decorCarvingGlossy: 'ديكور كارفينغ لامع',
+    glossyEndless: 'لامع لا نهائي',
+    statuarioMarbleLook: 'مظهر رخام ستاتواريو',
+    statuarioMarbleLookDesc:
+      'أسطح بمظهر رخام ستاتواريو مستوحاة من الرخام الإيطالي الكلاسيكي، بدرجات بيضاء ناعمة.',
+    partnerSuppliers: 'شراكات مع موردين موثوقين وخبراء الصناعة',
+    clientSatisfactionRate: 'معدل رضا العملاء',
+    highlyEquipped: '50+ وحدة مجهزة',
+    highlyEquippedDesc: 'مع أكثر من 50 وحدة مجهزة وآلات متقدمة نضمن الدقة.',
+    skilledExperts: '100+ خبير ماهر',
+    riyadhServiceArea: 'منطقة الخدمة في الرياض',
+    yearsExperience: 'خبرة تزيد عن 25 عامًا',
+    basedOnReviews: 'استنادًا إلى 2500 تقييم',
+    naturalMarbleSlabs: 'ألواح رخام طبيعي',
+    naturalMarbleSlabsDesc:
+      'ألواح رخام طبيعي مختارة بعناية تتميز بعروق فريدة وتشطيبات فاخرة.',
+    glossCollections: 'مجموعات لامعة',
+    designerPatternTiles: 'بلاط بنقوش تصميمية',
+    riyadhFocus: 'التركيز على الرياض',
+    supplyingTilesAcrossRiyadh: 'توريد البلاط في مختلف أنحاء الرياض',
+    riyadhSupportAvailable: 'الدعم متاح في الرياض',
+    customerSatisfactionRate: 'معدل رضا العملاء',
+    awardsRecognitions: 'الجوائز والتقديرات',
+    needHelpCallUs: 'هل تحتاج إلى مساعدة؟ اتصل بنا',
+    riyadhSupplyHubs: 'مراكز التوريد في الرياض',
+    riyadhProjectsCompleted: 'مشاريع الرياض المنجزة',
+    authorizedRiyadhPartners: 'شركاء التوريد المعتمدون في الرياض',
+    blogTitleOne: 'كيف تختار المساحات الداخلية العصرية والعملية المناسبة',
+    blogTitleTwo: 'فهم تشطيبات البلاط: اللامع، والمطفي، والأسطح المزخرفة',
+    blogTitleThree: 'أحدث اتجاهات البلاط التي تعيد تشكيل الديكورات الداخلية الحديثة',
+    testimonialRoleOne: 'مستشار إنشائي',
+    testimonialRoleTwo: 'مالك بنتهاوس',
+    testimonialRoleThree: 'مستشار إنشائي',
+    testimonialRoleFour: 'مهندس معماري، المملكة المتحدة',
+    testimonialNameOne: 'كريستين واتسون',
+    testimonialNameTwo: 'إيستر هوارد',
+    testimonialNameThree: 'فلويد مايلز',
+    testimonialNameFour: 'جون ريتشاردسون',
+  },
+}
 
 const Home = () => {
+  const { language } = useLanguage()
+  const isArabic = language === 'ar'
+  const text = HOME_COPY[isArabic ? 'ar' : 'en']
+
   return (
     <div>
       <div className="hero dark-section">
@@ -32,7 +154,7 @@ const Home = () => {
               className="section-sub-title wow fadeInUp"
               style={{ visibility: "visible", animationName: "fadeInUp" }}
             >
-              Crafting Timeless Stone Surfaces
+              {text.heroEyebrow}
             </span>
             <h1
               className="text-anime-style-3"
@@ -641,7 +763,7 @@ const Home = () => {
             }}
           >
             <a href="contact.html" className="btn-default btn-highlighted">
-              Explore Our Collection
+              {text.exploreCollection}
             </a>
           </div>
           {/* Hero Button End */}
@@ -701,7 +823,7 @@ const Home = () => {
               {/* Satisfy Client Images End */}
               {/* Satisfy Client Content Start */}
               <div className="satisfy-client-content">
-                <p>Trusted by homeowners in Riyadh for quality installation.</p>
+                <p>{text.heroTrust}</p>
               </div>
               {/* Satisfy Client Content End */}
             </div>
@@ -715,7 +837,7 @@ const Home = () => {
               >
                 <ThemeIcon name="play" />
               </a>
-              <p>Watch Video</p>
+              <p>{text.watchVideo}</p>
             </div>
             {/* Video Play Button End */}
           </div>
@@ -1144,7 +1266,7 @@ const Home = () => {
                       opacity: 0
                     }}
                   >
-                    n
+                    
                   </div>
                   <div
                     aria-hidden="true"
@@ -1486,9 +1608,9 @@ const Home = () => {
                 animationName: "none"
               }}
             >
-              Our advanced production processes, skilled craftsmanship, &amp;
-              strict quality control ensure consistent performance, refined
-              finishes, and long-lasting durability.
+              {isArabic
+                ? 'تضمن عمليات الإنتاج المتقدمة والحرفية الماهرة والرقابة الصارمة على الجودة أداءً ثابتًا وتشطيبات متقنة ومتانة طويلة الأمد.'
+                : 'Our advanced production processes, skilled craftsmanship, & strict quality control ensure consistent performance, refined finishes, and long-lasting durability.'}
             </p>
           </div>
           {/* Section Title End */}
@@ -1507,8 +1629,12 @@ const Home = () => {
                 }}
               >
                 <ul>
-                  <li>Continuously invest a advance technology</li>
-                  <li>Riyadh-ready quality standards built for lasting durability</li>
+                  <li>{isArabic ? 'نواصل الاستثمار في التكنولوجيا المتقدمة' : 'Continuously invest a advance technology'}</li>
+                  <li>
+                    {isArabic
+                      ? 'معايير جودة جاهزة لمتطلبات الرياض ومصممة لمتانة تدوم'
+                      : 'Riyadh-ready quality standards built for lasting durability'}
+                  </li>
                 </ul>
               </div>
               {/* About Us Body list End */}
@@ -1517,7 +1643,7 @@ const Home = () => {
                 {/* Skill Item Start */}
                 <div className="skillbar" data-percent="95%">
                   <div className="skill-data">
-                    <div className="skill-title">Manufacturing Quality</div>
+                    <div className="skill-title">{isArabic ? 'جودة التصنيع' : 'Manufacturing Quality'}</div>
                     <div className="skill-no">95%</div>
                   </div>
                   <div className="skill-progress">
@@ -1566,7 +1692,7 @@ const Home = () => {
             }}
           >
             <a href="about.html" className="btn-default">
-              More About Us
+              {text.moreAboutUs}
             </a>
           </div>
           {/* About Us Button End */}
@@ -2286,7 +2412,7 @@ const Home = () => {
             </div>
             <div className="collection-item-content">
               <h2>
-                <a href="collection.html">Living Room Tiles</a>
+                <a href="collection.html">{text.livingRoomTiles}</a>
               </h2>
               <p>Transform your living space with tiles that combine style.</p>
             </div>
@@ -2320,11 +2446,10 @@ const Home = () => {
             </div>
             <div className="collection-item-content">
               <h2>
-                <a href="collection.html">Kitchen Tiles</a>
+                <a href="collection.html">{text.kitchenTiles}</a>
               </h2>
               <p>
-                Designed for both style &amp; practicality, our kitchen tiles
-                resist spills.
+                {text.kitchenTilesDesc}
               </p>
             </div>
           </div>
@@ -2357,7 +2482,7 @@ const Home = () => {
             </div>
             <div className="collection-item-content">
               <h2>
-                <a href="collection.html">Bathroom Tiles</a>
+                <a href="collection.html">{text.bathroomTiles}</a>
               </h2>
               <p>
                 Elevate your bathroom with tiles that feels elegance &amp;
@@ -2393,7 +2518,7 @@ const Home = () => {
           {/* Satisfy Client Images End */}
           <p>
             Let's make something great work together.{" "}
-            <a href="contact.html">Get Free Quote</a>
+            <a href="contact.html">{text.getFreeQuote}</a>
           </p>
         </div>
         {/* Section Footer Text End */}
@@ -2414,7 +2539,7 @@ const Home = () => {
             className="section-sub-title wow fadeInUp"
             style={{ visibility: "visible", animationName: "fadeInUp" }}
           >
-            Why Choose Us
+            {isArabic ? 'لماذا تختارنا' : 'Why Choose Us'}
           </span>
           <h2
             className="text-anime-style-3"
@@ -3153,8 +3278,9 @@ const Home = () => {
             }}
           >
             <p>
-              We combine premium materials, expert craftsmanship, and strict
-              quality standards to deliver tiles that stand the test of time.
+              {isArabic
+                ? 'نجمع بين المواد الفاخرة والحرفية المتقنة ومعايير الجودة الصارمة لتقديم بلاط يصمد أمام اختبار الزمن.'
+                : 'We combine premium materials, expert craftsmanship, and strict quality standards to deliver tiles that stand the test of time.'}
             </p>
           </div>
           {/* Section Title Content End */}
@@ -3169,7 +3295,7 @@ const Home = () => {
             }}
           >
             <a className="btn-default" href="contact.html">
-              Learn More
+              {text.learnMore}
             </a>
           </div>
           {/* Section Button End */}
@@ -3289,7 +3415,7 @@ const Home = () => {
                 <h2>
                   <span>100</span>+
                 </h2>
-                <h3>Riyadh Focus</h3>
+                <h3>{text.riyadhFocus}</h3>
               </div>
               {/* Why Choose Counter Content End */}
               {/* Why Choose Item Content Start */}
@@ -3318,7 +3444,7 @@ const Home = () => {
                   <img src="images/icon-why-choose-us-item-1.svg" alt="" />
                 </div>
                 <div className="why-choose-item-title">
-                  <h3>Supplying Tiles Across Riyadh</h3>
+                  <h3>{text.supplyingTilesAcrossRiyadh}</h3>
                 </div>
               </div>
               {/* Why Choose Item Header End */}
@@ -3377,7 +3503,7 @@ const Home = () => {
             {/* Satisfy Client Images End */}
             <p>
               Let's make something great work together.{" "}
-              <a href="contact.html">Get Free Quote</a>
+              <a href="contact.html">{text.getFreeQuote}</a>
             </p>
           </div>
           {/* Section Footer Text End */}
@@ -3400,7 +3526,7 @@ const Home = () => {
             className="section-sub-title wow fadeInUp"
             style={{ visibility: "visible", animationName: "fadeInUp" }}
           >
-            Our Products
+            {isArabic ? 'منتجاتنا' : 'Our Products'}
           </span>
           <h2
             className="text-anime-style-3"
@@ -3851,7 +3977,7 @@ const Home = () => {
           </div>
           <div className="product-box-content">
             <h2>
-              <a href="products.html">Décor Carving Glossy</a>
+              <a href="products.html">{text.decorCarvingGlossy}</a>
             </h2>
             <p>
               Glossy décor carving surfaces crafted with intricate detailing
@@ -3860,7 +3986,7 @@ const Home = () => {
           </div>
           <div className="product-box-btn">
             <a href="products.html" className="readmore-btn">
-              View Products
+              {text.viewProducts}
             </a>
           </div>
         </div>
@@ -3882,7 +4008,7 @@ const Home = () => {
           </div>
           <div className="product-box-content">
             <h2>
-              <a href="products.html">Glossy Endless</a>
+              <a href="products.html">{text.glossyEndless}</a>
             </h2>
             <p>
               Endless glossy surfaces designed with seamless patterns and a
@@ -3891,7 +4017,7 @@ const Home = () => {
           </div>
           <div className="product-box-btn">
             <a href="products.html" className="readmore-btn">
-              View Products
+              {text.viewProducts}
             </a>
           </div>
         </div>
@@ -3913,16 +4039,15 @@ const Home = () => {
           </div>
           <div className="product-box-content">
             <h2>
-              <a href="products.html">Statuario Marble Look</a>
+              <a href="products.html">{text.statuarioMarbleLook}</a>
             </h2>
             <p>
-              Statuario marble look surfaces inspired by classic Italian marble,
-              featuring soft white tones.
+              {text.statuarioMarbleLookDesc}
             </p>
           </div>
           <div className="product-box-btn">
             <a href="products.html" className="readmore-btn">
-              View Products
+              {text.viewProducts}
             </a>
           </div>
         </div>
@@ -3937,7 +4062,7 @@ const Home = () => {
           {/* Comapany Support Content Start */}
           <div className="company-supports-content">
             <hr />
-            <p>Partnering with Trusted Suppliers and Industry Experts</p>
+            <p>{text.partnerSuppliers}</p>
             <hr />
           </div>
           {/* Comapany Support Content End */}
@@ -4073,7 +4198,7 @@ const Home = () => {
               <h3>
                 <span className="counter">36</span>%
               </h3>
-              <p>Client Satisfaction Rate</p>
+              <p>{text.clientSatisfactionRate}</p>
             </div>
             {/* Product Qualities Counter Box End */}
           </div>
@@ -4849,13 +4974,12 @@ const Home = () => {
                   <img src="images/icon-product-qualities-item-1.svg" alt="" />
                 </div>
                 <div className="product-qualities-item-title">
-                  <h3>50+ Highly Equipped</h3>
+                  <h3>{text.highlyEquipped}</h3>
                 </div>
               </div>
               <div className="product-qualities-item-content">
                 <p>
-                  With 50+ highly equipped units &amp; advanced machinery, we
-                  ensure precision.
+                  {text.highlyEquippedDesc}
                 </p>
               </div>
             </div>
@@ -4883,7 +5007,7 @@ const Home = () => {
                   <img src="images/icon-product-qualities-item-2.svg" alt="" />
                 </div>
                 <div className="product-qualities-item-title">
-                  <h3>100+ Skilled Experts</h3>
+                  <h3>{text.skilledExperts}</h3>
                 </div>
               </div>
               <div className="product-qualities-item-content">
@@ -4917,7 +5041,7 @@ const Home = () => {
                   <img src="images/icon-product-qualities-item-3.svg" alt="" />
                 </div>
                 <div className="product-qualities-item-title">
-                  <h3>Riyadh Service Area</h3>
+                  <h3>{text.riyadhServiceArea}</h3>
                 </div>
               </div>
               <div className="product-qualities-item-content">
@@ -4951,7 +5075,7 @@ const Home = () => {
                   <img src="images/icon-product-qualities-item-4.svg" alt="" />
                 </div>
                 <div className="product-qualities-item-title">
-                  <h3>25+ Years Experience</h3>
+                  <h3>{text.yearsExperience}</h3>
                 </div>
               </div>
               <div className="product-qualities-item-content">
@@ -4996,7 +5120,7 @@ const Home = () => {
                   </div>
                   <div className="interactive-process-item-btn">
                     <a href="products.html" className="readmore-btn">
-                      View Product
+                      {text.viewProduct}
                     </a>
                   </div>
                 </div>
@@ -5013,16 +5137,15 @@ const Home = () => {
                 <div className="interactive-process-item-body-wap">
                   <div className="interactive-process-item-content-wap">
                     <h3>
-                      <a href="products.html">Natural Marble Slabs</a>
+                      <a href="products.html">{text.naturalMarbleSlabs}</a>
                     </h3>
                     <p>
-                      Carefully selected natural marble slabs feature unique
-                      veining and premium finishes.
+                      {text.naturalMarbleSlabsDesc}
                     </p>
                   </div>
                   <div className="interactive-process-item-btn">
                     <a href="products.html" className="readmore-btn">
-                      View Product
+                      {text.viewProduct}
                     </a>
                   </div>
                 </div>
@@ -5039,7 +5162,7 @@ const Home = () => {
                 <div className="interactive-process-item-body-wap">
                   <div className="interactive-process-item-content-wap">
                     <h3>
-                      <a href="products.html">Gloss Collections</a>
+                      <a href="products.html">{text.glossCollections}</a>
                     </h3>
                     <p>
                       Our Gloss Design Collections features refineding surfaces
@@ -5048,7 +5171,7 @@ const Home = () => {
                   </div>
                   <div className="interactive-process-item-btn">
                     <a href="products.html" className="readmore-btn">
-                      View Product
+                      {text.viewProduct}
                     </a>
                   </div>
                 </div>
@@ -5065,7 +5188,7 @@ const Home = () => {
                 <div className="interactive-process-item-body-wap">
                   <div className="interactive-process-item-content-wap">
                     <h3>
-                      <a href="products.html">Designer Pattern Tiles</a>
+                      <a href="products.html">{text.designerPatternTiles}</a>
                     </h3>
                     <p>
                       Designer tiles crafted with precision patterns and refine
@@ -5074,7 +5197,7 @@ const Home = () => {
                   </div>
                   <div className="interactive-process-item-btn">
                     <a href="products.html" className="readmore-btn">
-                      View Product
+                      {text.viewProduct}
                     </a>
                   </div>
                 </div>
@@ -5163,7 +5286,7 @@ const Home = () => {
                 </div>
               </div>
               <div className="core-features-cta-content">
-                <p>Based on 2500 reviews</p>
+                <p>{text.basedOnReviews}</p>
               </div>
             </div>
             {/* Core Features CTA Info End */}
@@ -5181,7 +5304,7 @@ const Home = () => {
               className="section-sub-title wow fadeInUp"
               style={{ visibility: "visible", animationName: "fadeInUp" }}
             >
-              Our Core Features
+              {isArabic ? 'مميزاتنا الأساسية' : 'Our Core Features'}
             </span>
             <h2
               className="text-anime-style-3"
@@ -6012,7 +6135,7 @@ const Home = () => {
             }}
           >
             <a href="contact.html" className="btn-default">
-              Learn More
+              {text.learnMore}
             </a>
           </div>
           {/* Core Features Button End */}
@@ -6037,7 +6160,7 @@ const Home = () => {
               className="section-sub-title wow fadeInUp"
               style={{ visibility: "visible", animationName: "fadeInUp" }}
             >
-              Contact Us Today
+              {text.contactUsToday}
             </span>
             <h2
               className="text-anime-style-3"
@@ -6698,9 +6821,9 @@ const Home = () => {
                 animationName: "fadeInUp"
               }}
             >
-              Let's discuss your tiles and marble requirements &amp; find the
-              perfect solution for your project. Our experts are ready to guide
-              you with premium products.
+              {isArabic
+                ? 'دعنا نناقش احتياجاتك من البلاط والرخام ونجد الحل المثالي لمشروعك. خبراؤنا جاهزون لإرشادك بمنتجات فاخرة.'
+                : "Let's discuss your tiles and marble requirements & find the perfect solution for your project. Our experts are ready to guide you with premium products."}
             </p>
           </div>
           {/* Section title End */}
@@ -6714,7 +6837,7 @@ const Home = () => {
               animationName: "fadeInUp"
             }}
           >
-            <p>Need Any Help? Call Us</p>
+            <p>{text.needHelpCallUs}</p>
             <h3>
               <a href="tel:123456789">+(123) 456-789</a>
             </h3>
@@ -6752,7 +6875,7 @@ const Home = () => {
               <h2>
                 <span className="counter">50</span>+
               </h2>
-              <p>Riyadh Supply Hubs</p>
+              <p>{text.riyadhSupplyHubs}</p>
             </div>
           </div>
           {/* CTA Box Counter Item End */}
@@ -6765,7 +6888,7 @@ const Home = () => {
               <h2>
                 <span className="counter">3500</span>+
               </h2>
-              <p>Riyadh Projects Completed</p>
+              <p>{text.riyadhProjectsCompleted}</p>
             </div>
           </div>
           {/* CTA Box Counter Item End */}
@@ -6778,7 +6901,7 @@ const Home = () => {
               <h2>
                 <span className="counter">150</span>+
               </h2>
-              <p>Authorized Riyadh Supply Partners</p>
+              <p>{text.authorizedRiyadhPartners}</p>
             </div>
           </div>
           {/* CTA Box Counter Item End */}
@@ -7412,7 +7535,7 @@ const Home = () => {
             }}
           >
             <a className="btn-default" href="contact.html">
-              Contact Us Today
+              {text.contactUsToday}
             </a>
           </div>
           {/* Section Button End */}
@@ -7438,7 +7561,7 @@ const Home = () => {
                 </h2>
               </div>
               <div className="partners-item-counter-content">
-                <h3>Riyadh Support Available</h3>
+                <h3>{text.riyadhSupportAvailable}</h3>
               </div>
             </div>
           </div>
@@ -7473,14 +7596,15 @@ const Home = () => {
                 </h2>
               </div>
               <div className="partners-item-counter-content">
-                <h3>Customer Satisfaction Rate</h3>
+                <h3>{text.customerSatisfactionRate}</h3>
               </div>
             </div>
           </div>
           <div className="partners-item-content">
             <p>
-              With a consistently high satisfaction rate, we deliver reliable,
-              high-quality solutions that exceed expectations.
+              {isArabic
+                ? 'بفضل معدل رضا مرتفع باستمرار، نقدم حلولًا موثوقة وعالية الجودة تتجاوز التوقعات.'
+                : 'With a consistently high satisfaction rate, we deliver reliable, high-quality solutions that exceed expectations.'}
             </p>
           </div>
         </div>
@@ -7546,7 +7670,7 @@ const Home = () => {
           {/* Satisfy Client Images End */}
           <p>
             Let's make something great work together.{" "}
-            <a href="contact.html">Get Free Quote</a>
+            <a href="contact.html">{text.getFreeQuote}</a>
           </p>
         </div>
         {/* Section Footer Text End */}
@@ -7569,7 +7693,7 @@ const Home = () => {
             className="section-sub-title wow fadeInUp"
             style={{ visibility: "visible", animationName: "fadeInUp" }}
           >
-            Our Testimonials
+            {isArabic ? 'آراء عملائنا' : 'Our Testimonials'}
           </span>
           <h2
             className="text-anime-style-3"
@@ -7953,9 +8077,9 @@ const Home = () => {
               animationName: "fadeInUp"
             }}
           >
-            Hear directly from our clients as they share their experiences with
-            our quality, craftsman-ship, and service, their words reflect our
-            commitment to excellence.
+            {isArabic
+              ? 'استمع مباشرة إلى عملائنا وهم يشاركون تجاربهم مع الجودة والحرفية والخدمة؛ تعكس كلماتهم التزامنا بالتميّز.'
+              : 'Hear directly from our clients as they share their experiences with our quality, craftsman-ship, and service, their words reflect our commitment to excellence.'}
           </p>
         </div>
         {/* Section Title End */}
@@ -8023,8 +8147,8 @@ const Home = () => {
                       </p>
                     </div>
                     <div className="testimonial-author-content">
-                      <h2>Kristin Watson</h2>
-                      <p>Construction Consultant</p>
+                      <h2>{text.testimonialNameOne}</h2>
+                      <p>{text.testimonialRoleOne}</p>
                     </div>
                   </div>
                 </div>
@@ -8059,14 +8183,14 @@ const Home = () => {
                     </div>
                     <div className="testimonial-item-content">
                       <p>
-                        The tiles instantly elevated the look of our interiors.
-                        The finish is flawless, &amp; the quality truly feels
-                        premium in every sense.
+                        {isArabic
+                          ? 'ارتقى البلاط بمظهر التصميم الداخلي لدينا فورًا. التشطيب مثالي، والجودة تبدو فاخرة بكل معنى الكلمة.'
+                          : 'The tiles instantly elevated the look of our interiors. The finish is flawless, & the quality truly feels premium in every sense.'}
                       </p>
                     </div>
                     <div className="testimonial-author-content">
-                      <h2>Esther Howard</h2>
-                      <p>Penthouse Owner</p>
+                      <h2>{text.testimonialNameTwo}</h2>
+                      <p>{text.testimonialRoleTwo}</p>
                     </div>
                   </div>
                 </div>
@@ -8107,8 +8231,8 @@ const Home = () => {
                       </p>
                     </div>
                     <div className="testimonial-author-content">
-                      <h2>Floyd Miles</h2>
-                      <p>Construction Consultant</p>
+                      <h2>{text.testimonialNameThree}</h2>
+                      <p>{text.testimonialRoleThree}</p>
                     </div>
                   </div>
                 </div>
@@ -8149,8 +8273,8 @@ const Home = () => {
                       </p>
                     </div>
                     <div className="testimonial-author-content">
-                      <h2>John Richardson</h2>
-                      <p>Architect, UK</p>
+                      <h2>{text.testimonialNameFour}</h2>
+                      <p>{text.testimonialRoleFour}</p>
                     </div>
                   </div>
                 </div>
@@ -8191,7 +8315,7 @@ const Home = () => {
           {/* Satisfy Client Images End */}
           <p>
             Let's make something great work together.{" "}
-            <a href="contact.html">Get Free Quote</a>
+            <a href="contact.html">{text.getFreeQuote}</a>
           </p>
         </div>
         {/* Section Footer Text End */}
@@ -8213,7 +8337,7 @@ const Home = () => {
             className="section-sub-title wow fadeInUp"
             style={{ visibility: "visible", animationName: "fadeInUp" }}
           >
-            Latest Blogs
+            {text.latestBlogs}
           </span>
           <h2
             className="text-anime-style-3"
@@ -8738,7 +8862,6 @@ const Home = () => {
                     opacity: 1
                   }}
                 >
-                  n
                 </div>
                 <div
                   aria-hidden="true"
@@ -8872,8 +8995,7 @@ const Home = () => {
             <div className="post-item-content">
               <h2>
                 <a href="blog-single.html">
-                  How to Choose the Right Modern &amp; Functional Interior
-                  Spaces
+                  {text.blogTitleOne}
                 </a>
               </h2>
             </div>
@@ -8881,7 +9003,7 @@ const Home = () => {
             {/* Post Item Button Start*/}
             <div className="post-item-btn">
               <a href="blog-single.html" className="readmore-btn">
-                Learn More
+                {text.learnMore}
               </a>
             </div>
             {/* Post Item Button End*/}
@@ -8916,8 +9038,7 @@ const Home = () => {
             <div className="post-item-content">
               <h2>
                 <a href="blog-single.html">
-                  Understanding Tile Finishes: Glossy, Matte, &amp; Textured
-                  Surfaces
+                  {text.blogTitleTwo}
                 </a>
               </h2>
             </div>
@@ -8925,7 +9046,7 @@ const Home = () => {
             {/* Post Item Button Start*/}
             <div className="post-item-btn">
               <a href="blog-single.html" className="readmore-btn">
-                Learn More
+                {text.learnMore}
               </a>
             </div>
             {/* Post Item Button End*/}
@@ -8960,7 +9081,7 @@ const Home = () => {
             <div className="post-item-content">
               <h2>
                 <a href="blog-single.html">
-                  Top Tile Trends That Are Redefining Modern Interiors
+                  {text.blogTitleThree}
                 </a>
               </h2>
             </div>
@@ -8968,7 +9089,7 @@ const Home = () => {
             {/* Post Item Button Start*/}
             <div className="post-item-btn">
               <a href="blog-single.html" className="readmore-btn">
-                Learn More
+                {text.learnMore}
               </a>
             </div>
             {/* Post Item Button End*/}

@@ -1,31 +1,71 @@
 import React, { useMemo, useState } from "react";
-import ThemeIcon from "../../Components/ThemeIcon";
 import { useLanguage } from "../../Utils/Language";
+
+const FOOTER_COPY = {
+  en: {
+    greeting: "Welcome. How can we help with your tile and marble installation?",
+    service: "Message us on WhatsApp to book a site visit or installation service in Riyadh.",
+    cta: "Start Chat",
+    about:
+      "Serving clients across Riyadh, Saudi Arabia with expert tile and marble installation for homes, villas, and interior spaces.",
+    social: "Follow Us On Social:",
+    quickLinks: "Quick Links",
+    collection: "Our Collection",
+    newsletter: "Subscribe To Newsletter",
+    newsletterText: "Subscribe to our newsletter for the latest tiles trends, design inspiration, etc.",
+    emailPlaceholder: "Enter Your Email Address",
+    policyTitle: "Professional Tile & Marble Installation Services",
+    privacyPolicy: "Privacy Policy",
+    terms: "Terms & Condition",
+    copyright: "Copyright © 2026 All Rights Reserved.",
+    home: "Home",
+    aboutUs: "About Us",
+    events: "Events",
+    blogs: "Blogs",
+    contactUs: "Contact Us",
+    livingRoomTiles: "Living Room Tiles",
+    kitchenTiles: "Kitchen Tiles",
+    bathroomTiles: "Bathroom Tiles",
+    bedroomTiles: "Bedroom Tiles",
+    outdoorTiles: "Outdoor Tiles",
+  },
+  ar: {
+    greeting: "مرحبًا بك. كيف يمكننا مساعدتك في تركيب البلاط والرخام؟",
+    service: "راسلنا على واتساب لحجز زيارة ميدانية أو خدمة تركيب في الرياض.",
+    cta: "ابدأ المحادثة",
+    about:
+      "نخدم العملاء في مختلف أنحاء الرياض، السعودية، مع خدمات تركيب بلاط ورخام احترافية للمنازل والفلل والمساحات الداخلية.",
+    social: "تابعنا على وسائل التواصل:",
+    quickLinks: "روابط سريعة",
+    collection: "مجموعتنا",
+    newsletter: "اشترك في النشرة البريدية",
+    newsletterText: "اشترك في نشرتنا البريدية لأحدث اتجاهات البلاط وإلهام التصميم وغير ذلك.",
+    emailPlaceholder: "أدخل عنوان بريدك الإلكتروني",
+    policyTitle: "خدمات احترافية لتركيب البلاط والرخام",
+    privacyPolicy: "سياسة الخصوصية",
+    terms: "الشروط والأحكام",
+    copyright: "© 2026 جميع الحقوق محفوظة.",
+    home: "الرئيسية",
+    aboutUs: "من نحن",
+    events: "الفعاليات",
+    blogs: "المدونات",
+    contactUs: "اتصل بنا",
+    livingRoomTiles: "بلاط غرف المعيشة",
+    kitchenTiles: "بلاط المطابخ",
+    bathroomTiles: "بلاط الحمامات",
+    bedroomTiles: "بلاط غرف النوم",
+    outdoorTiles: "بلاط خارجي",
+  },
+};
 
 function Footer() {
     const WHATSAPP_NUMBER = "966508383937";
     const { language } = useLanguage();
+    const text = FOOTER_COPY[language === "ar" ? "ar" : "en"];
     const [isPromptOpen, setIsPromptOpen] = useState(false);
     const [hasUnreadPrompt, setHasUnreadPrompt] = useState(true);
-    const SOCIAL_LINKS = {
-      pinterest: "https://www.pinterest.com/",
-      twitter: "https://x.com/",
-      facebook: "https://www.facebook.com/",
-      instagram: "https://www.instagram.com/",
-    };
     const promptContent = useMemo(
-      () =>
-        language === "ar"
-          ? {
-              greeting: "مرحبا بك، كيف نقدر نخدمك في تركيب البلاط والرخام؟",
-              service: "راسلنا على واتساب لحجز معاينة أو طلب خدمة التركيب في الرياض.",
-              cta: "ابدأ المحادثة",
-            }
-          : {
-              greeting: "Welcome. How can we help with your tile and marble installation?",
-              service: "Message us on WhatsApp to book a site visit or installation service in Riyadh.",
-              cta: "Start Chat",
-            },
+      () => FOOTER_COPY[language === "ar" ? "ar" : "en"],
       [language]
     );
 
@@ -55,38 +95,10 @@ function Footer() {
           {/* About Footer Content Start */}
           <div className="about-footer-content">
             <p>
-              Serving clients across Riyadh, Saudi Arabia with expert tile and
-              marble installation for homes, villas, and interior spaces.
+              {text.about}
             </p>
           </div>
           {/* About Footer Content End */}
-          {/* Footer Social Links Start */}
-          <div className="footer-social-links">
-            <h2>Follow Us On Social:</h2>
-            <ul>
-              <li>
-                <a href={SOCIAL_LINKS.pinterest} target="_blank" rel="noopener noreferrer">
-                  <ThemeIcon name="pinterest-p" />
-                </a>
-              </li>
-              <li>
-                <a href={SOCIAL_LINKS.twitter} target="_blank" rel="noopener noreferrer">
-                  <ThemeIcon name="x-twitter" />
-                </a>
-              </li>
-              <li>
-                <a href={SOCIAL_LINKS.facebook} target="_blank" rel="noopener noreferrer">
-                  <ThemeIcon name="facebook-f" />
-                </a>
-              </li>
-              <li>
-                <a href={SOCIAL_LINKS.instagram} target="_blank" rel="noopener noreferrer">
-                  <ThemeIcon name="instagram" />
-                </a>
-              </li>
-            </ul>
-          </div>
-          {/* Footer Social Links End */}
         </div>
         {/* About Footer End */}
       </div>
@@ -95,100 +107,62 @@ function Footer() {
         <div className="footer-links-box">
           {/* Footer Links Start */}
           <div className="footer-links">
-            <h2>Quick Links</h2>
+            <h2>{text.quickLinks}</h2>
             <ul>
               <li>
-                <a href="index.html">Home</a>
+                <a href="index.html">{text.home}</a>
               </li>
               <li>
-                <a href="about.html">About Us</a>
+                <a href="about.html">{text.aboutUs}</a>
               </li>
               <li>
-                <a href="events.html">Events</a>
-              </li>
-              <li>
-                <a href="blog.html">Blogs</a>
-              </li>
-              <li>
-                <a href="contact.html">Contact Us</a>
+                <a href="contact.html">{text.contactUs}</a>
               </li>
             </ul>
           </div>
           {/* Footer Links End */}
           {/* Footer Links Start */}
           <div className="footer-links">
-            <h2>Our Collection</h2>
+            <h2>{text.collection}</h2>
             <ul>
               <li>
-                <a href="collection.html">Living Room Tiles</a>
+                <a href="collection.html">{text.livingRoomTiles}</a>
               </li>
               <li>
-                <a href="collection.html">Kitchen Tiles</a>
+                <a href="collection.html">{text.kitchenTiles}</a>
               </li>
               <li>
-                <a href="collection.html">Bathroom Tiles</a>
+                <a href="collection.html">{text.bathroomTiles}</a>
               </li>
               <li>
-                <a href="collection.html">Bedroom Tiles</a>
+                <a href="collection.html">{text.bedroomTiles}</a>
               </li>
               <li>
-                <a href="collection.html">Outdoor Tiles</a>
+                <a href="collection.html">{text.outdoorTiles}</a>
               </li>
             </ul>
           </div>
           {/* Footer Links End */}
-          {/* Footer Newsletter Form Start */}
           <div className="footer-links footer-newsletter-form">
-            <h2>Subscribe To Newsletter</h2>
+            <h2>{text.policyTitle}</h2>
             <p>
-              Subscribe to our newsletter for the latest tiles trends, design
-              inspiration, etc.
+              {language === "ar"
+                ? "نركّز على تركيب البلاط والرخام للمنازل والفلل والمشاريع الداخلية في الرياض."
+                : "We focus on tile and marble installation for homes, villas, and interior projects in Riyadh."}
             </p>
-            <form id="newslettersForm" action="#" method="POST">
-              <div className="form-group">
-                <input
-                  type="email"
-                  name="mail"
-                  className="form-control"
-                  id="mail"
-                  placeholder="Enter Your Email Address"
-                  required=""
-                />
-                <button type="submit" className="newsletter-btn">
-                  <img src="images/arrow-white.svg" alt="" />
-                </button>
-              </div>
-            </form>
+            <p>
+              <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
+                {promptContent.cta}
+              </a>
+            </p>
           </div>
-          {/* Footer Newsletter Form End */}
-          {/* Footer Policy Info Box Start */}
-          <div className="footer-policy-info-box">
-            {/* Footer Policy Box Title Start */}
-            <div className="footer-policy-box-title">
-              <h3>Professional Tile &amp; Marble Installation Services</h3>
-            </div>
-            {/* Footer Policy Box Title End */}
-            {/* Footer Privacy Policy Start */}
-            <div className="footer-privacy-policy">
-              <ul>
-                <li>
-                  <a href="/contact">Privacy Policy</a>
-                </li>
-                <li>
-                  <a href="/contact">Terms &amp; Condition</a>
-                </li>
-              </ul>
-            </div>
-            {/* Footer Privacy Policy End */}
-          </div>
-          {/* Footer Policy Info Box End */}
         </div>
         {/* Footer Links Box End */}
       </div>
       <div className="col-lg-12">
         {/* Footer Copyright Text Start */}
         <div className="footer-copyright-text">
-          <p>Copyright © 2026 All Rights Reserved.</p>
+          <p>{text.copyright}</p>
         </div>
         {/* Footer Copyright Text End */}
       </div>

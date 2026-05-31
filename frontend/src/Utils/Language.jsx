@@ -29,6 +29,11 @@ const HEADING_TRANSLATIONS = {
   "Trusted by partners and projects in Riyadh": "موثوق من الشركاء والمشاريع في الرياض",
   "Trusted voices that reflect": "آراء موثوقة تعكس الجودة",
   "Where design comes to life": "حيث ينبض التصميم بالحياة",
+  "Why Choose Us": "لماذا تختارنا",
+  "Our Products": "منتجاتنا",
+  "Our Core Features": "مميزاتنا الأساسية",
+  "Our Testimonials": "آراء عملائنا",
+  "Latest Blogs": "أحدث المدونات",
 };
 
 const LanguageContext = createContext({
