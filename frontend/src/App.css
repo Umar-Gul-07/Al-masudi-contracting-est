@@ -55,6 +55,35 @@
   vertical-align: middle;
 }
 
+.whatsapp-widget {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9999;
+}
+
+.whatsapp-widget-btn {
+  position: relative;
+  width: 56px;
+  height: 56px;
+  border: 0;
+  border-radius: 50%;
+  background: #25d366;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  padding: 0;
+}
+
+.whatsapp-widget-icon {
+  width: 30px;
+  height: 30px;
+  display: block;
+}
+
 .whatsapp-notification-dot {
   position: absolute;
   top: 2px;
@@ -64,36 +93,69 @@
   border-radius: 50%;
   background: #ef4444;
   border: 2px solid #ffffff;
+  pointer-events: none;
 }
 
 .whatsapp-prompt-bubble {
   position: absolute;
-  right: 72px;
-  bottom: 8px;
-  min-width: 220px;
-  max-width: 290px;
+  right: 0;
+  bottom: calc(100% + 12px);
+  width: min(290px, calc(100vw - 48px));
   background: #ffffff;
   color: #1f2937;
   border-radius: 18px;
-  padding: 12px 14px;
+  padding: 14px;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.16);
   font-size: 13px;
   line-height: 1.5;
   animation: whatsappPromptIn 0.35s ease;
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 10px;
 }
 
 .whatsapp-prompt-bubble::after {
   content: "";
   position: absolute;
-  right: -7px;
-  bottom: 18px;
+  right: 20px;
+  bottom: -7px;
   width: 14px;
   height: 14px;
   background: #ffffff;
   transform: rotate(45deg);
+}
+
+.whatsapp-prompt-close {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  border: 0;
+  background: transparent;
+  color: #9ca3af;
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0;
+}
+
+.whatsapp-prompt-messages {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 4px;
+  padding-right: 18px;
+}
+
+.whatsapp-prompt-message {
+  background: #f3f4f6;
+  border-radius: 12px;
+  padding: 10px 12px;
+  color: #374151;
+  animation: whatsappPromptIn 0.35s ease;
+}
+
+.whatsapp-prompt-message span {
+  display: block;
 }
 
 @keyframes whatsappPromptIn {
@@ -108,21 +170,25 @@
   }
 }
 
-.whatsapp-prompt-title {
-  font-size: 13px;
-  font-weight: 700;
-  color: #111827;
-}
-
-.whatsapp-prompt-text {
-  font-size: 13px;
-  color: #4b5563;
-}
-
 .whatsapp-prompt-cta {
-  font-size: 12px;
+  display: block;
+  width: 100%;
+  border: 0;
+  border-radius: 999px;
+  padding: 11px 14px;
+  background: #25d366;
+  color: #ffffff;
+  font-size: 13px;
   font-weight: 700;
-  color: #16a34a;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.whatsapp-prompt-cta:hover {
+  background: #1ebe5d;
+  color: #ffffff;
 }
 
 #google_translate_element,
@@ -172,20 +238,30 @@ body {
   padding-right: 0;
 }
 
-.rtl-layout a[title="WhatsApp"] {
-  right: auto !important;
-  left: 24px !important;
+.rtl-layout .whatsapp-widget {
+  right: auto;
+  left: 24px;
 }
 
 .rtl-layout .whatsapp-prompt-bubble {
   right: auto;
-  left: 72px;
+  left: 0;
   text-align: right;
 }
 
 .rtl-layout .whatsapp-prompt-bubble::after {
   right: auto;
-  left: -7px;
+  left: 20px;
+}
+
+.rtl-layout .whatsapp-prompt-close {
+  right: auto;
+  left: 10px;
+}
+
+.rtl-layout .whatsapp-prompt-messages {
+  padding-right: 0;
+  padding-left: 18px;
 }
 
 .rtl-layout .whatsapp-notification-dot {

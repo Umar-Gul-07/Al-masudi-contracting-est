@@ -1,11 +1,66 @@
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { useLanguage } from "../../Utils/Language";
+
+const playNotificationSound = () => {
+  try {
+    const AudioCtx = window.AudioContext || window.webkitAudioContext;
+    if (!AudioCtx) return;
+
+    const ctx = new AudioCtx();
+    const startTone = () => {
+      const oscillator = ctx.createOscillator();
+      const gain = ctx.createGain();
+
+      oscillator.connect(gain);
+      gain.connect(ctx.destination);
+      oscillator.type = "sine";
+      oscillator.frequency.value = 880;
+      gain.gain.setValueAtTime(0.0001, ctx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.22, ctx.currentTime + 0.02);
+      gain.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + 0.35);
+      oscillator.start(ctx.currentTime);
+      oscillator.stop(ctx.currentTime + 0.35);
+
+      window.setTimeout(() => {
+        ctx.close();
+      }, 500);
+    };
+
+    if (ctx.state === "suspended") {
+      ctx.resume().then(startTone).catch(() => ctx.close());
+      return;
+    }
+
+    startTone();
+  } catch {
+    // Ignore if audio is blocked by the browser.
+  }
+};
+
+const unlockNotificationAudio = () => {
+  try {
+    const AudioCtx = window.AudioContext || window.webkitAudioContext;
+    if (!AudioCtx) return;
+
+    const ctx = new AudioCtx();
+    if (ctx.state === "suspended") {
+      ctx.resume().finally(() => ctx.close());
+    } else {
+      ctx.close();
+    }
+  } catch {
+    // Ignore if audio is blocked by the browser.
+  }
+};
 
 const FOOTER_COPY = {
   en: {
-    greeting: "Welcome. How can we help with your tile and marble installation?",
-    service: "Message us on WhatsApp to book a site visit or installation service in Riyadh.",
-    cta: "Start Chat",
+    autoMessage1: "Hello! Thanks for visiting our website.",
+    autoMessage2:
+      "Need tile or marble installation in Riyadh? Tap below to message us on WhatsApp — we are happy to help!",
+    defaultMessage:
+      "Hello, I need tile and marble installation service in Riyadh. Can you please help me?",
+    cta: "Send Message on WhatsApp",
     about:
       "Serving clients across Riyadh, Saudi Arabia with expert tile and marble installation for homes, villas, and interior spaces.",
     social: "Follow Us On Social:",
@@ -30,9 +85,12 @@ const FOOTER_COPY = {
     outdoorTiles: "Outdoor Tiles",
   },
   ar: {
-    greeting: "مرحبًا بك. كيف يمكننا مساعدتك في تركيب البلاط والرخام؟",
-    service: "راسلنا على واتساب لحجز زيارة ميدانية أو خدمة تركيب في الرياض.",
-    cta: "ابدأ المحادثة",
+    autoMessage1: "مرحبًا! شكرًا لزيارتكم موقعنا.",
+    autoMessage2:
+      "هل تحتاج تركيب بلاط أو رخام في الرياض؟ اضغط أدناه للمراسلة على واتساب — يسعدنا مساعدتك!",
+    defaultMessage:
+      "مرحبًا، أحتاج خدمة تركيب بلاط ورخام في الرياض. هل يمكنكم مساعدتي؟",
+    cta: "إرسال رسالة على واتساب",
     about:
       "نخدم العملاء في مختلف أنحاء الرياض، السعودية، مع خدمات تركيب بلاط ورخام احترافية للمنازل والفلل والمساحات الداخلية.",
     social: "تابعنا على وسائل التواصل:",
@@ -61,22 +119,63 @@ const FOOTER_COPY = {
 function Footer() {
     const WHATSAPP_NUMBER = "966508383937";
     const { language } = useLanguage();
-    const text = FOOTER_COPY[language === "ar" ? "ar" : "en"];
+    const langKey = language === "ar" ? "ar" : "en";
+    const text = FOOTER_COPY[langKey];
     const [isPromptOpen, setIsPromptOpen] = useState(false);
-    const [hasUnreadPrompt, setHasUnreadPrompt] = useState(true);
-    const promptContent = useMemo(
-      () => FOOTER_COPY[language === "ar" ? "ar" : "en"],
-      [language]
+    const [promptStage, setPromptStage] = useState(0);
+    const [hasUnreadPrompt, setHasUnreadPrompt] = useState(false);
+    const promptContent = useMemo(() => FOOTER_COPY[langKey], [langKey]);
+
+    const whatsappLink = useMemo(
+      () =>
+        `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
+          promptContent.defaultMessage
+        )}`,
+      [promptContent.defaultMessage]
     );
 
-    const whatsappLink = `https://wa.me/${WHATSAPP_NUMBER}`;
+    useEffect(() => {
+      const handleUnlockAudio = () => {
+        unlockNotificationAudio();
+      };
 
-    const handleWhatsappClick = (event) => {
-      if (!isPromptOpen) {
-        event.preventDefault();
+      window.addEventListener("pointerdown", handleUnlockAudio, { once: true });
+
+      setIsPromptOpen(false);
+      setPromptStage(0);
+      setHasUnreadPrompt(false);
+
+      const firstTimer = window.setTimeout(() => {
         setIsPromptOpen(true);
-        setHasUnreadPrompt(false);
-      }
+        setPromptStage(1);
+        setHasUnreadPrompt(true);
+        playNotificationSound();
+      }, 2000);
+
+      const secondTimer = window.setTimeout(() => {
+        setPromptStage(2);
+        setHasUnreadPrompt(true);
+        playNotificationSound();
+      }, 5000);
+
+      return () => {
+        window.removeEventListener("pointerdown", handleUnlockAudio);
+        window.clearTimeout(firstTimer);
+        window.clearTimeout(secondTimer);
+      };
+    }, [langKey]);
+
+    const handleWhatsappToggle = (event) => {
+      event.preventDefault();
+      setIsPromptOpen((open) => !open);
+      setHasUnreadPrompt(false);
+    };
+
+    const handlePromptClose = (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+      setIsPromptOpen(false);
+      setHasUnreadPrompt(false);
     };
 
     return (
@@ -170,57 +269,61 @@ function Footer() {
   </div>
 </footer>
 
-<a
-  href={whatsappLink}
-  target="_blank"
-  rel="noopener noreferrer"
-  title="WhatsApp"
-  aria-label="WhatsApp chat"
-  onClick={handleWhatsappClick}
-  style={{
-    position: "fixed",
-    bottom: 24,
-    right: 24,
-    zIndex: 9999,
-    width: 56,
-    height: 56,
-    borderRadius: "50%",
-    background: "#25D366",
-    color: "#fff",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    boxShadow: "0 4px 14px rgba(0,0,0,0.25)",
-    textDecoration: "none",
-  }}
->
-  {hasUnreadPrompt && <span className="whatsapp-notification-dot" />}
+<div className="whatsapp-widget">
   {isPromptOpen && (
-    <span className="whatsapp-prompt-bubble">
-      <strong className="whatsapp-prompt-title">{promptContent.greeting}</strong>
-      <span className="whatsapp-prompt-text">{promptContent.service}</span>
-      <span className="whatsapp-prompt-cta">{promptContent.cta}</span>
-    </span>
+    <div className="whatsapp-prompt-bubble" role="dialog" aria-live="polite">
+      <button
+        type="button"
+        className="whatsapp-prompt-close"
+        aria-label={langKey === "ar" ? "إغلاق" : "Close"}
+        onClick={handlePromptClose}
+      >
+        ×
+      </button>
+      <div className="whatsapp-prompt-messages">
+        {promptStage >= 1 && (
+          <div className="whatsapp-prompt-message whatsapp-prompt-message--incoming">
+            <span>{promptContent.autoMessage1}</span>
+          </div>
+        )}
+        {promptStage >= 2 && (
+          <div className="whatsapp-prompt-message whatsapp-prompt-message--incoming">
+            <span>{promptContent.autoMessage2}</span>
+          </div>
+        )}
+      </div>
+      <a
+        href={whatsappLink}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="whatsapp-prompt-cta"
+        onClick={() => setHasUnreadPrompt(false)}
+      >
+        {promptContent.cta}
+      </a>
+    </div>
   )}
-  <svg
-    aria-hidden="true"
-    viewBox="0 0 32 32"
-    style={{
-      width: 30,
-      height: 30,
-      display: "block",
-    }}
+
+  <button
+    type="button"
+    className="whatsapp-widget-btn"
+    title="WhatsApp"
+    aria-label="WhatsApp chat"
+    onClick={handleWhatsappToggle}
   >
-    <path
-      fill="#FFFFFF"
-      d="M19.11 17.25c-.27-.14-1.61-.79-1.86-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.31.2-.58.07-.27-.14-1.13-.42-2.15-1.33-.79-.71-1.33-1.58-1.48-1.85-.16-.27-.02-.41.12-.54.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.02-.22-.53-.44-.46-.61-.47-.16-.01-.34-.01-.52-.01s-.48.07-.73.34c-.25.27-.95.93-.95 2.26s.98 2.61 1.11 2.79c.14.18 1.92 2.93 4.66 4.11.65.28 1.16.44 1.56.56.66.21 1.25.18 1.72.11.53-.08 1.61-.66 1.84-1.3.23-.64.23-1.18.16-1.29-.06-.11-.24-.18-.5-.32Z"
-    />
-    <path
-      fill="#FFFFFF"
-      d="M16 3.2C8.93 3.2 3.2 8.93 3.2 16c0 2.25.59 4.45 1.72 6.39L3.2 28.8l6.57-1.68A12.72 12.72 0 0 0 16 28.8c7.07 0 12.8-5.73 12.8-12.8S23.07 3.2 16 3.2Zm0 23.49c-1.92 0-3.8-.51-5.44-1.48l-.39-.23-3.9 1 .99-3.81-.25-.39A10.62 10.62 0 0 1 5.39 16c0-5.85 4.76-10.61 10.61-10.61S26.61 10.15 26.61 16 21.85 26.69 16 26.69Z"
-    />
-  </svg>
-</a>
+    {hasUnreadPrompt && <span className="whatsapp-notification-dot" />}
+    <svg aria-hidden="true" viewBox="0 0 32 32" className="whatsapp-widget-icon">
+      <path
+        fill="#FFFFFF"
+        d="M19.11 17.25c-.27-.14-1.61-.79-1.86-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.31.2-.58.07-.27-.14-1.13-.42-2.15-1.33-.79-.71-1.33-1.58-1.48-1.85-.16-.27-.02-.41.12-.54.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.02-.22-.53-.44-.46-.61-.47-.16-.01-.34-.01-.52-.01s-.48.07-.73.34c-.25.27-.95.93-.95 2.26s.98 2.61 1.11 2.79c.14.18 1.92 2.93 4.66 4.11.65.28 1.16.44 1.56.56.66.21 1.25.18 1.72.11.53-.08 1.61-.66 1.84-1.3.23-.64.23-1.18.16-1.29-.06-.11-.24-.18-.5-.32Z"
+      />
+      <path
+        fill="#FFFFFF"
+        d="M16 3.2C8.93 3.2 3.2 8.93 3.2 16c0 2.25.59 4.45 1.72 6.39L3.2 28.8l6.57-1.68A12.72 12.72 0 0 0 16 28.8c7.07 0 12.8-5.73 12.8-12.8S23.07 3.2 16 3.2Zm0 23.49c-1.92 0-3.8-.51-5.44-1.48l-.39-.23-3.9 1 .99-3.81-.25-.39A10.62 10.62 0 0 1 5.39 16c0-5.85 4.76-10.61 10.61-10.61S26.61 10.15 26.61 16 21.85 26.69 16 26.69Z"
+      />
+    </svg>
+  </button>
+</div>
 
         </>
     )
