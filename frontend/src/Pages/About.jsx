@@ -172,14 +172,14 @@ const About = () => {
             {/* About Us Image Start */}
             <div className="about-us-image">
               <figure className="image-anime">
-                <img src="images/about-us-image-1.jpg" alt="" />
+                <img src="/images/about-us-image-1.jpg" alt="" />
               </figure>
             </div>
             {/* About Us Image End */}
             {/* Contact Us Circle Start */}
             <div className="contact-us-circle">
               <a href="contact.html">
-                <img src="images/contact-us-circle.svg" alt="" />
+                <img src="/images/contact-us-circle.svg" alt="" />
               </a>
             </div>
             {/* Contact Us Circle End */}
@@ -190,7 +190,7 @@ const About = () => {
             {/* About Us Image Start */}
             <div className="about-us-image">
               <figure className="image-anime">
-                <img src="images/about-us-image-2.jpg" alt="" />
+                <img src="/images/about-us-image-2.jpg" alt="" />
               </figure>
             </div>
             {/* About Us Image End */}
@@ -973,7 +973,7 @@ const About = () => {
                 }}
               >
                 <img
-                  src="images/about-us-body-image.jpg"
+                  src="/images/about-us-body-image.jpg"
                   alt=""
                   style={{
                     translate: "none",
@@ -1638,7 +1638,7 @@ const About = () => {
               }}
             >
               <img
-                src="images/our-values-image.jpg"
+                src="/images/our-values-image.jpg"
                 alt=""
                 style={{
                   translate: "none",
@@ -1662,7 +1662,7 @@ const About = () => {
             style={{ visibility: "visible", animationName: "fadeInUp" }}
           >
             <div className="icon-box">
-              <img src="images/icon-our-values-item-1.svg" alt="" />
+              <img src="/images/icon-our-values-item-1.svg" alt="" />
             </div>
             <div className="our-value-item-content">
               <h3>Quality Excellence</h3>
@@ -1688,7 +1688,7 @@ const About = () => {
             }}
           >
             <div className="icon-box">
-              <img src="images/icon-our-values-item-2.svg" alt="" />
+              <img src="/images/icon-our-values-item-2.svg" alt="" />
             </div>
             <div className="our-value-item-content">
               <h3>Integrity &amp; Transparency</h3>
@@ -1714,7 +1714,7 @@ const About = () => {
             }}
           >
             <div className="icon-box">
-              <img src="images/icon-our-values-item-3.svg" alt="" />
+              <img src="/images/icon-our-values-item-3.svg" alt="" />
             </div>
             <div className="our-value-item-content">
               <h3>Innovation &amp; Technology</h3>
@@ -2521,7 +2521,7 @@ const About = () => {
           {/* Why Choose Us Image Start */}
           <div className="why-choose-us-image">
             <figure className="image-anime">
-              <img src="images/why-choose-us-image.jpg" alt="" />
+              <img src="/images/why-choose-us-image.jpg" alt="" />
             </figure>
           </div>
           {/* Why Choose Us Image End */}
@@ -2531,22 +2531,22 @@ const About = () => {
             <div className="satisfy-client-images">
               <div className="satisfy-client-image">
                 <figure className="image-anime">
-                  <img src="images/author-1.jpg" alt="" />
+                  <img src="/images/author-1.jpg" alt="" />
                 </figure>
               </div>
               <div className="satisfy-client-image">
                 <figure className="image-anime">
-                  <img src="images/author-2.jpg" alt="" />
+                  <img src="/images/author-2.jpg" alt="" />
                 </figure>
               </div>
               <div className="satisfy-client-image">
                 <figure className="image-anime">
-                  <img src="images/author-3.jpg" alt="" />
+                  <img src="/images/author-3.jpg" alt="" />
                 </figure>
               </div>
               <div className="satisfy-client-image">
                 <figure className="image-anime">
-                  <img src="images/author-4.jpg" alt="" />
+                  <img src="/images/author-4.jpg" alt="" />
                 </figure>
               </div>
             </div>
@@ -2578,22 +2578,22 @@ const About = () => {
               <div className="satisfy-client-images">
                 <div className="satisfy-client-image">
                   <figure className="image-anime">
-                    <img src="images/author-1.jpg" alt="" />
+                    <img src="/images/author-1.jpg" alt="" />
                   </figure>
                 </div>
                 <div className="satisfy-client-image">
                   <figure className="image-anime">
-                    <img src="images/author-2.jpg" alt="" />
+                    <img src="/images/author-2.jpg" alt="" />
                   </figure>
                 </div>
                 <div className="satisfy-client-image">
                   <figure className="image-anime">
-                    <img src="images/author-3.jpg" alt="" />
+                    <img src="/images/author-3.jpg" alt="" />
                   </figure>
                 </div>
                 <div className="satisfy-client-image">
                   <figure className="image-anime">
-                    <img src="images/author-4.jpg" alt="" />
+                    <img src="/images/author-4.jpg" alt="" />
                   </figure>
                 </div>
               </div>
@@ -2649,7 +2649,7 @@ const About = () => {
               {/* Why Choose Item Header Start */}
               <div className="why-choose-item-header">
                 <div className="icon-box">
-                  <img src="images/icon-why-choose-us-item-1.svg" alt="" />
+                  <img src="/images/icon-why-choose-us-item-1.svg" alt="" />
                 </div>
                 <div className="why-choose-item-title">
                   <h3>Supplying Tiles Across Riyadh</h3>
@@ -2660,25 +2660,25 @@ const About = () => {
               <div className="why-choose-country-flag-list">
                 <ul>
                   <li>
-                    <img src="images/why-choose-item-image-1.png" alt="" />
+                    <img src="/images/why-choose-item-image-1.png" alt="" />
                   </li>
                   <li>
-                    <img src="images/why-choose-item-image-2.png" alt="" />
+                    <img src="/images/why-choose-item-image-2.png" alt="" />
                   </li>
                   <li>
-                    <img src="images/why-choose-item-image-3.png" alt="" />
+                    <img src="/images/why-choose-item-image-3.png" alt="" />
                   </li>
                   <li>
-                    <img src="images/why-choose-item-image-4.png" alt="" />
+                    <img src="/images/why-choose-item-image-4.png" alt="" />
                   </li>
                   <li>
-                    <img src="images/why-choose-item-image-5.png" alt="" />
+                    <img src="/images/why-choose-item-image-5.png" alt="" />
                   </li>
                   <li>
-                    <img src="images/why-choose-item-image-6.png" alt="" />
+                    <img src="/images/why-choose-item-image-6.png" alt="" />
                   </li>
                   <li>
-                    <img src="images/why-choose-item-image-7.png" alt="" />
+                    <img src="/images/why-choose-item-image-7.png" alt="" />
                   </li>
                 </ul>
               </div>
@@ -2701,11 +2701,11 @@ const About = () => {
             <div className="satisfy-client-images">
               <div className="satisfy-client-image">
                 <figure className="image-anime">
-                  <img src="images/author-1.jpg" alt="" />
+                  <img src="/images/author-1.jpg" alt="" />
                 </figure>
               </div>
               <div className="satisfy-client-image add-more">
-                <img src="images/icon-phone-white.svg" alt="" />
+                <img src="/images/icon-phone-white.svg" alt="" />
               </div>
             </div>
             {/* Satisfy Client Images End */}
@@ -3410,7 +3410,7 @@ const About = () => {
           >
             <div className="work-process-item-image">
               <figure className="image-anime">
-                <img src="images/process-item-1.jpg" alt="" />
+                <img src="/images/process-item-1.jpg" alt="" />
               </figure>
             </div>
             <div className="work-process-item-body">
@@ -3439,7 +3439,7 @@ const About = () => {
           >
             <div className="work-process-item-image">
               <figure className="image-anime">
-                <img src="images/process-item-2.jpg" alt="" />
+                <img src="/images/process-item-2.jpg" alt="" />
               </figure>
             </div>
             <div className="work-process-item-body">
@@ -3468,7 +3468,7 @@ const About = () => {
           >
             <div className="work-process-item-image">
               <figure className="image-anime">
-                <img src="images/process-item-3.jpg" alt="" />
+                <img src="/images/process-item-3.jpg" alt="" />
               </figure>
             </div>
             <div className="work-process-item-body">
@@ -3503,11 +3503,11 @@ const About = () => {
           <div className="satisfy-client-images">
             <div className="satisfy-client-image">
               <figure className="image-anime">
-                <img src="images/author-1.jpg" alt="" />
+                <img src="/images/author-1.jpg" alt="" />
               </figure>
             </div>
             <div className="satisfy-client-image add-more">
-              <img src="images/icon-phone-white.svg" alt="" />
+              <img src="/images/icon-phone-white.svg" alt="" />
             </div>
           </div>
           {/* Satisfy Client Images End */}
@@ -3539,7 +3539,7 @@ const About = () => {
             {/* Product Qualities Image Start */}
             <div className="product-qualities-image">
               <figure className="image-anime">
-                <img src="images/our-product-qualities-image-1.jpg" alt="" />
+                <img src="/images/our-product-qualities-image-1.jpg" alt="" />
               </figure>
             </div>
             {/* Product Qualities Image End */}
@@ -3558,7 +3558,7 @@ const About = () => {
             {/* Product Qualities Image Start */}
             <div className="product-qualities-image">
               <figure className="image-anime">
-                <img src="images/our-product-qualities-image-2.jpg" alt="" />
+                <img src="/images/our-product-qualities-image-2.jpg" alt="" />
               </figure>
             </div>
             {/* Product Qualities Image End */}
@@ -4304,14 +4304,14 @@ const About = () => {
               <div className="product-qualities-item-bg-image">
                 <div className="icon-box">
                   <img
-                    src="images/icon-product-qualities-item-bg-1.svg"
+                    src="/images/icon-product-qualities-item-bg-1.svg"
                     alt=""
                   />
                 </div>
               </div>
               <div className="product-qualities-item-header">
                 <div className="icon-box">
-                  <img src="images/icon-product-qualities-item-1.svg" alt="" />
+                  <img src="/images/icon-product-qualities-item-1.svg" alt="" />
                 </div>
                 <div className="product-qualities-item-title">
                   <h3>50+ Highly Equipped</h3>
@@ -4338,14 +4338,14 @@ const About = () => {
               <div className="product-qualities-item-bg-image">
                 <div className="icon-box">
                   <img
-                    src="images/icon-product-qualities-item-bg-2.svg"
+                    src="/images/icon-product-qualities-item-bg-2.svg"
                     alt=""
                   />
                 </div>
               </div>
               <div className="product-qualities-item-header">
                 <div className="icon-box">
-                  <img src="images/icon-product-qualities-item-2.svg" alt="" />
+                  <img src="/images/icon-product-qualities-item-2.svg" alt="" />
                 </div>
                 <div className="product-qualities-item-title">
                   <h3>100+ Skilled Experts</h3>
@@ -4372,14 +4372,14 @@ const About = () => {
               <div className="product-qualities-item-bg-image">
                 <div className="icon-box">
                   <img
-                    src="images/icon-product-qualities-item-bg-3.svg"
+                    src="/images/icon-product-qualities-item-bg-3.svg"
                     alt=""
                   />
                 </div>
               </div>
               <div className="product-qualities-item-header">
                 <div className="icon-box">
-                  <img src="images/icon-product-qualities-item-3.svg" alt="" />
+                  <img src="/images/icon-product-qualities-item-3.svg" alt="" />
                 </div>
                 <div className="product-qualities-item-title">
                   <h3>Riyadh Service Area</h3>
@@ -4406,14 +4406,14 @@ const About = () => {
               <div className="product-qualities-item-bg-image">
                 <div className="icon-box">
                   <img
-                    src="images/icon-product-qualities-item-bg-4.svg"
+                    src="/images/icon-product-qualities-item-bg-4.svg"
                     alt=""
                   />
                 </div>
               </div>
               <div className="product-qualities-item-header">
                 <div className="icon-box">
-                  <img src="images/icon-product-qualities-item-4.svg" alt="" />
+                  <img src="/images/icon-product-qualities-item-4.svg" alt="" />
                 </div>
                 <div className="product-qualities-item-title">
                   <h3>25+ Years Experience</h3>
@@ -4450,7 +4450,7 @@ const About = () => {
           {/* Core Features Image Start */}
           <div className="core-features-image">
             <figure className="image-anime">
-              <img src="images/our-core-features-image.jpg" alt="" />
+              <img src="/images/our-core-features-image.jpg" alt="" />
             </figure>
           </div>
           {/* Core Features Image End */}
@@ -4458,7 +4458,7 @@ const About = () => {
           <div className="core-features-cta-box">
             {/* Core Features CTA Image Start */}
             <div className="core-features-cta-image">
-              <img src="images/icon-core-features-cta-box.svg" alt="" />
+              <img src="/images/icon-core-features-cta-box.svg" alt="" />
             </div>
             {/* Core Features CTA Image End */}
             {/* Core Features CTA Info Start */}
@@ -5171,7 +5171,7 @@ const About = () => {
                   aria-expanded="true"
                   aria-controls="fcollapse1"
                 >
-                  <img src="images/icon-core-features-accordion-1.svg" alt="" />{" "}
+                  <img src="/images/icon-core-features-accordion-1.svg" alt="" />{" "}
                   Hygienic
                 </button>
               </h2>
@@ -5211,7 +5211,7 @@ const About = () => {
                   aria-expanded="true"
                   aria-controls="fcollapse2"
                 >
-                  <img src="images/icon-core-features-accordion-2.svg" alt="" />{" "}
+                  <img src="/images/icon-core-features-accordion-2.svg" alt="" />{" "}
                   Easy To Clean
                 </button>
               </h2>
@@ -5251,7 +5251,7 @@ const About = () => {
                   aria-expanded="true"
                   aria-controls="fcollapse3"
                 >
-                  <img src="images/icon-core-features-accordion-3.svg" alt="" />{" "}
+                  <img src="/images/icon-core-features-accordion-3.svg" alt="" />{" "}
                   Hygienic
                 </button>
               </h2>
@@ -5291,7 +5291,7 @@ const About = () => {
                   aria-expanded="true"
                   aria-controls="fcollapse4"
                 >
-                  <img src="images/icon-core-features-accordion-4.svg" alt="" />{" "}
+                  <img src="/images/icon-core-features-accordion-4.svg" alt="" />{" "}
                   Impact Resistant
                 </button>
               </h2>
@@ -6044,7 +6044,7 @@ const About = () => {
           style={{ visibility: "visible", animationName: "fadeInUp" }}
         >
           <a href="contact.html">
-            <img src="images/contact-us-cta-circle.svg" alt="" />
+            <img src="/images/contact-us-cta-circle.svg" alt="" />
           </a>
         </div>
         {/* Contact Us Circle End */}
@@ -6060,7 +6060,7 @@ const About = () => {
           {/* CTA Box Counter Item Start */}
           <div className="cta-box-counter-item">
             <div className="icon-box">
-              <img src="images/icon-cta-box-1.svg" alt="" />
+              <img src="/images/icon-cta-box-1.svg" alt="" />
             </div>
             <div className="cta-box-counter-item-content">
               <h2>
@@ -6073,7 +6073,7 @@ const About = () => {
           {/* CTA Box Counter Item Start */}
           <div className="cta-box-counter-item">
             <div className="icon-box">
-              <img src="images/icon-cta-box-2.svg" alt="" />
+              <img src="/images/icon-cta-box-2.svg" alt="" />
             </div>
             <div className="cta-box-counter-item-content">
               <h2>
@@ -6086,7 +6086,7 @@ const About = () => {
           {/* CTA Box Counter Item Start */}
           <div className="cta-box-counter-item">
             <div className="icon-box">
-              <img src="images/icon-cta-box-3.svg" alt="" />
+              <img src="/images/icon-cta-box-3.svg" alt="" />
             </div>
             <div className="cta-box-counter-item-content">
               <h2>
@@ -6118,7 +6118,7 @@ const About = () => {
           {/* Faqs Image Start */}
           <div className="faq-image">
             <figure className="image-anime">
-              <img src="images/faqs-image.jpg" alt="" />
+              <img src="/images/faqs-image.jpg" alt="" />
             </figure>
           </div>
           {/* Faqs Image End */}
@@ -6127,7 +6127,7 @@ const About = () => {
             {/* Faqs CTA Item Start */}
             <div className="faq-cta-item">
               <div className="icon-box">
-                <img src="images/icon-headphone-white.svg" alt="" />
+                <img src="/images/icon-headphone-white.svg" alt="" />
               </div>
               <div className="faq-cta-content">
                 <h3>Still have a questions?</h3>
@@ -6141,7 +6141,7 @@ const About = () => {
             {/* Faqs CTA Contact Item Start */}
             <div className="faq-cta-contact-item">
               <div className="icon-box">
-                <img src="images/icon-headphone-primary.svg" alt="" />
+                <img src="/images/icon-headphone-primary.svg" alt="" />
               </div>
               <div className="faq-cta-contact-item-content">
                 <h3>Call Us Today</h3>

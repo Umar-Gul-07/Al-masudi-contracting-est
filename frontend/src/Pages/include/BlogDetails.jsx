@@ -508,7 +508,7 @@ const BlogDetails = () => {
             }}
           >
             <img
-              src="images/post-1.jpg"
+              src="/images/post-1.jpg"
               alt=""
               style={{
                 translate: "none",

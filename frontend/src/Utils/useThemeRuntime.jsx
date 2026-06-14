@@ -55,6 +55,11 @@ export default function useThemeRuntime() {
 
           $element.magnificPopup({
             type: "iframe",
+            disableOn: () => window.innerWidth < 992,
+            mainClass: "mfp-fade",
+            removalDelay: 160,
+            preloader: false,
+            fixedContentPos: true,
           });
         });
       }
@@ -104,11 +109,13 @@ export default function useThemeRuntime() {
       }
 
       const heroVideo = document.getElementById("myvideo");
-      if (heroVideo) {
+      if (heroVideo && !heroVideo.dataset.initialized) {
+        heroVideo.dataset.initialized = "true";
         heroVideo.muted = true;
         heroVideo.defaultMuted = true;
         heroVideo.setAttribute("muted", "");
         heroVideo.setAttribute("playsinline", "");
+        heroVideo.setAttribute("webkit-playsinline", "true");
 
         const playPromise = heroVideo.play?.();
         if (playPromise?.catch) {

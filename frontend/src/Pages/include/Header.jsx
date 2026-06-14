@@ -17,7 +17,7 @@ function Header() {
       <div className="container">
         {/* Logo Start */}
         <a className="navbar-brand" href="./">
-          <img src="images/logo.svg" alt="Logo" />
+          <img src="/images/logo.svg" alt="Logo" />
         </a>
         {/* Logo End */}
         {/* Main Menu Start */}

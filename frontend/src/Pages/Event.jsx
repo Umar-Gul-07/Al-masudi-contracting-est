@@ -149,14 +149,14 @@ const Event = () => {
           <div className="event-item-image">
             <Link to="/event-single/5" data-cursor-text="View">
               <figure>
-                <img src="images/event-item-image-1.jpg" alt="" />
+                <img src="/images/event-item-image-1.jpg" alt="" />
               </figure>
             </Link>
           </div>
           <div className="event-item-body">
             <div className="event-item-btn">
               <Link to="/event-single/5">
-                <img src="images/arrow-white.svg" alt="" />
+                <img src="/images/arrow-white.svg" alt="" />
               </Link>
             </div>
             <div className="event-item-content">
@@ -184,14 +184,14 @@ const Event = () => {
           <div className="event-item-image">
             <Link to="/event-single/5" data-cursor-text="View">
               <figure>
-                <img src="images/event-item-image-2.jpg" alt="" />
+                <img src="/images/event-item-image-2.jpg" alt="" />
               </figure>
             </Link>
           </div>
           <div className="event-item-body">
             <div className="event-item-btn">
               <Link to="/event-single/5">
-                <img src="images/arrow-white.svg" alt="" />
+                <img src="/images/arrow-white.svg" alt="" />
               </Link>
             </div>
             <div className="event-item-content">
@@ -219,14 +219,14 @@ const Event = () => {
           <div className="event-item-image">
             <Link to="/event-single/5" data-cursor-text="View">
               <figure>
-                <img src="images/event-item-image-3.jpg" alt="" />
+                <img src="/images/event-item-image-3.jpg" alt="" />
               </figure>
             </Link>
           </div>
           <div className="event-item-body">
             <div className="event-item-btn">
               <Link to="/event-single/5">
-                <img src="images/arrow-white.svg" alt="" />
+                <img src="/images/arrow-white.svg" alt="" />
               </Link>
             </div>
             <div className="event-item-content">
@@ -252,14 +252,14 @@ const Event = () => {
           <div className="event-item-image">
             <Link to="/event-single/5" data-cursor-text="View">
               <figure>
-                <img src="images/event-item-image-4.jpg" alt="" />
+                <img src="/images/event-item-image-4.jpg" alt="" />
               </figure>
             </Link>
           </div>
           <div className="event-item-body">
             <div className="event-item-btn">
               <Link to="/event-single/5">
-                <img src="images/arrow-white.svg" alt="" />
+                <img src="/images/arrow-white.svg" alt="" />
               </Link>
             </div>
             <div className="event-item-content">
@@ -287,14 +287,14 @@ const Event = () => {
           <div className="event-item-image">
             <Link to="/event-single/5" data-cursor-text="View">
               <figure>
-                <img src="images/event-item-image-5.jpg" alt="" />
+                <img src="/images/event-item-image-5.jpg" alt="" />
               </figure>
             </Link>
           </div>
           <div className="event-item-body">
             <div className="event-item-btn">
               <Link to="/event-single/5">
-                <img src="images/arrow-white.svg" alt="" />
+                <img src="/images/arrow-white.svg" alt="" />
               </Link>
             </div>
             <div className="event-item-content">
@@ -322,14 +322,14 @@ const Event = () => {
           <div className="event-item-image">
             <Link to="/event-single/6" data-cursor-text="View">
               <figure>
-                <img src="images/event-item-image-6.jpg" alt="" />
+                <img src="/images/event-item-image-6.jpg" alt="" />
               </figure>
             </Link>
           </div>
           <div className="event-item-body">
             <div className="event-item-btn">
               <Link to="/event-single/6">
-                <img src="images/arrow-white.svg" alt="" />
+                <img src="/images/arrow-white.svg" alt="" />
               </Link>
             </div>
             <div className="event-item-content">

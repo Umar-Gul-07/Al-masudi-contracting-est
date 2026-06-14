@@ -215,7 +215,7 @@ function Footer() {
         <div className="about-footer-box">
           {/* Footer Logo Start */}
           <div className="footer-logo">
-            <img src="images/logo-white.svg" alt="" />
+            <img src="/images/logo-white.svg" alt="" />
           </div>
           {/* Footer Logo End */}
           {/* About Footer Content Start */}

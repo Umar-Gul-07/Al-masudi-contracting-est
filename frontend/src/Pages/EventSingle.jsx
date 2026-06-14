@@ -511,7 +511,7 @@ const EventSingle = () => {
             {/* Event Info Item Start */}
             <div className="event-info-item">
               <div className="icon-box">
-                <img src="images/icon-calendar-white.svg" alt="" />
+                <img src="/images/icon-calendar-white.svg" alt="" />
               </div>
               <div className="event-info-item-content">
                 <p>Event Date</p>
@@ -522,7 +522,7 @@ const EventSingle = () => {
             {/* Event Info Item Start */}
             <div className="event-info-item">
               <div className="icon-box">
-                <img src="images/icon-location-white.svg" alt="" />
+                <img src="/images/icon-location-white.svg" alt="" />
               </div>
               <div className="event-info-item-content">
                 <p>Event Location</p>
@@ -533,7 +533,7 @@ const EventSingle = () => {
             {/* Event Info Item Start */}
             <div className="event-info-item">
               <div className="icon-box">
-                <img src="images/icon-clock-white.svg" alt="" />
+                <img src="/images/icon-clock-white.svg" alt="" />
               </div>
               <div className="event-info-item-content">
                 <p>Event Time</p>
@@ -935,9 +935,9 @@ const EventSingle = () => {
             className="photo-gallery wow fadeInUp"
             style={{ visibility: "visible", animationName: "fadeInUp" }}
           >
-            <a href="images/event-gallery-1.jpg" data-cursor-text="View">
+            <a href="/images/event-gallery-1.jpg" data-cursor-text="View">
               <figure className="image-anime">
-                <img src="images/event-gallery-1.jpg" alt="" />
+                <img src="/images/event-gallery-1.jpg" alt="" />
               </figure>
             </a>
           </div>
@@ -952,9 +952,9 @@ const EventSingle = () => {
               animationName: "fadeInUp"
             }}
           >
-            <a href="images/event-gallery-2.jpg" data-cursor-text="View">
+            <a href="/images/event-gallery-2.jpg" data-cursor-text="View">
               <figure className="image-anime">
-                <img src="images/event-gallery-2.jpg" alt="" />
+                <img src="/images/event-gallery-2.jpg" alt="" />
               </figure>
             </a>
           </div>
@@ -969,9 +969,9 @@ const EventSingle = () => {
               animationName: "fadeInUp"
             }}
           >
-            <a href="images/event-gallery-3.jpg" data-cursor-text="View">
+            <a href="/images/event-gallery-3.jpg" data-cursor-text="View">
               <figure className="image-anime">
-                <img src="images/event-gallery-3.jpg" alt="" />
+                <img src="/images/event-gallery-3.jpg" alt="" />
               </figure>
             </a>
           </div>
@@ -986,9 +986,9 @@ const EventSingle = () => {
               animationName: "fadeInUp"
             }}
           >
-            <a href="images/event-gallery-4.jpg" data-cursor-text="View">
+            <a href="/images/event-gallery-4.jpg" data-cursor-text="View">
               <figure className="image-anime">
-                <img src="images/event-gallery-4.jpg" alt="" />
+                <img src="/images/event-gallery-4.jpg" alt="" />
               </figure>
             </a>
           </div>
@@ -1003,9 +1003,9 @@ const EventSingle = () => {
               animationName: "fadeInUp"
             }}
           >
-            <a href="images/event-gallery-5.jpg" data-cursor-text="View">
+            <a href="/images/event-gallery-5.jpg" data-cursor-text="View">
               <figure className="image-anime">
-                <img src="images/event-gallery-5.jpg" alt="" />
+                <img src="/images/event-gallery-5.jpg" alt="" />
               </figure>
             </a>
           </div>
@@ -1020,9 +1020,9 @@ const EventSingle = () => {
               animationName: "fadeInUp"
             }}
           >
-            <a href="images/event-gallery-6.jpg" data-cursor-text="View">
+            <a href="/images/event-gallery-6.jpg" data-cursor-text="View">
               <figure className="image-anime">
-                <img src="images/event-gallery-6.jpg" alt="" />
+                <img src="/images/event-gallery-6.jpg" alt="" />
               </figure>
             </a>
           </div>
@@ -1037,9 +1037,9 @@ const EventSingle = () => {
               animationName: "fadeInUp"
             }}
           >
-            <a href="images/event-gallery-7.jpg" data-cursor-text="View">
+            <a href="/images/event-gallery-7.jpg" data-cursor-text="View">
               <figure className="image-anime">
-                <img src="images/event-gallery-7.jpg" alt="" />
+                <img src="/images/event-gallery-7.jpg" alt="" />
               </figure>
             </a>
           </div>
@@ -1054,9 +1054,9 @@ const EventSingle = () => {
               animationName: "fadeInUp"
             }}
           >
-            <a href="images/event-gallery-8.jpg" data-cursor-text="View">
+            <a href="/images/event-gallery-8.jpg" data-cursor-text="View">
               <figure className="image-anime">
-                <img src="images/event-gallery-8.jpg" alt="" />
+                <img src="/images/event-gallery-8.jpg" alt="" />
               </figure>
             </a>
           </div>

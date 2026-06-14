@@ -172,7 +172,7 @@ const Blogs = () => {
           <div className="post-featured-image">
             <Link to="/blog-details/1" data-cursor-text="View">
               <figure>
-                <img src="images/post-1.jpg" alt="" />
+                <img src="/images/post-1.jpg" alt="" />
               </figure>
             </Link>
           </div>
@@ -216,7 +216,7 @@ const Blogs = () => {
           <div className="post-featured-image">
             <Link to="/blog-details/2" data-cursor-text="View">
               <figure>
-                <img src="images/post-2.jpg" alt="" />
+                <img src="/images/post-2.jpg" alt="" />
               </figure>
             </Link>
           </div>
@@ -260,7 +260,7 @@ const Blogs = () => {
           <div className="post-featured-image">
             <Link to="/blog-details/3" data-cursor-text="View">
               <figure>
-                <img src="images/post-3.jpg" alt="" />
+                <img src="/images/post-3.jpg" alt="" />
               </figure>
             </Link>
           </div>
@@ -303,7 +303,7 @@ const Blogs = () => {
           <div className="post-featured-image">
             <Link to="/blog-details/4" data-cursor-text="View">
               <figure>
-                <img src="images/post-4.jpg" alt="" />
+                <img src="/images/post-4.jpg" alt="" />
               </figure>
             </Link>
           </div>
@@ -346,7 +346,7 @@ const Blogs = () => {
           <div className="post-featured-image">
             <Link to="/blog-details/5" data-cursor-text="View">
               <figure>
-                <img src="images/post-5.jpg" alt="" />
+                <img src="/images/post-5.jpg" alt="" />
               </figure>
             </Link>
           </div>
@@ -389,7 +389,7 @@ const Blogs = () => {
           <div className="post-featured-image">
             <Link to="/blog-details/6" data-cursor-text="View">
               <figure>
-                <img src="images/post-6.jpg" alt="" />
+                <img src="/images/post-6.jpg" alt="" />
               </figure>
             </Link>
           </div>

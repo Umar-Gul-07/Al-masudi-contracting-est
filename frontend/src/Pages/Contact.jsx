@@ -872,7 +872,7 @@ const Contact = () => {
               style={{ visibility: "visible", animationName: "fadeInUp" }}
             >
               <div className="icon-box">
-                <img src="images/icon-headphone-accent-secondary.svg" alt="" />
+                <img src="/images/icon-headphone-accent-secondary.svg" alt="" />
               </div>
               <div className="contact-info-box-title">
                 <h3>24/7 Dedicated Customer Support</h3>
@@ -891,11 +891,11 @@ const Contact = () => {
             <div className="contact-info-box-list">
               <ul>
                 <li>
-                  <img src="images/icon-phone-accent-secondary.svg" alt="" />
+                  <img src="/images/icon-phone-accent-secondary.svg" alt="" />
                   <a href="tel:123456789">+(123) 456-789</a>
                 </li>
                 <li>
-                  <img src="images/icon-mail-accent-secondary.svg" alt="" />
+                  <img src="/images/icon-mail-accent-secondary.svg" alt="" />
                   <a href="mailto:info@domainname.com">info@domainname.com</a>
                 </li>
               </ul>

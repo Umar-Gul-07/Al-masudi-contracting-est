@@ -1,5 +1,6 @@
 import React from 'react'
 import ThemeIcon from '../Components/ThemeIcon'
+import HeroVideo from '../Components/HeroVideo'
 import { useLanguage } from '../Utils/Language'
 
 const HOME_COPY = {
@@ -129,18 +130,7 @@ const Home = () => {
       <div className="hero dark-section">
   {/* Video Start */}
   <div className="hero-bg-video">
-    {/* Selfhosted Video Start */}
-    {/* <video autoplay muted loop id="herovideo"><source src="images/hero-bg-video.mp4" type="video/mp4"></video> */}
-    <video autoPlay muted playsInline loop preload="auto" id="myvideo">
-      <source
-        src="https://demo.awaikenthemes.com/assets/videos/tilux-hero-video.mp4"
-        type="video/mp4"
-      />
-    </video>
-    {/* Selfhosted Video End */}
-    {/* Youtube Video Start */}
-    {/* <div id="herovideo" class="player" data-property="{videoURL:'OjTRVpgtcG4',containment:'.hero-video', showControls:false, autoPlay:true, loop:true, vol:0, mute:false, startAt:0,  stopAt:296, opacity:1, addRaster:true, quality:'large', optimizeDisplay:true}"></div> */}
-    {/* Youtube Video End */}
+    <HeroVideo />
   </div>
   {/* Video End */}
   <div className="container">
@@ -801,22 +791,22 @@ const Home = () => {
               <div className="satisfy-client-images">
                 <div className="satisfy-client-image">
                   <figure className="image-anime">
-                    <img src="images/author-1.jpg" alt="" />
+                    <img src="/images/author-1.jpg" alt="" />
                   </figure>
                 </div>
                 <div className="satisfy-client-image">
                   <figure className="image-anime">
-                    <img src="images/author-2.jpg" alt="" />
+                    <img src="/images/author-2.jpg" alt="" />
                   </figure>
                 </div>
                 <div className="satisfy-client-image">
                   <figure className="image-anime">
-                    <img src="images/author-3.jpg" alt="" />
+                    <img src="/images/author-3.jpg" alt="" />
                   </figure>
                 </div>
                 <div className="satisfy-client-image">
                   <figure className="image-anime">
-                    <img src="images/author-4.jpg" alt="" />
+                    <img src="/images/author-4.jpg" alt="" />
                   </figure>
                 </div>
               </div>
@@ -864,14 +854,14 @@ const Home = () => {
             {/* About Us Image Start */}
             <div className="about-us-image">
               <figure className="image-anime">
-                <img src="images/about-us-image-1.jpg" alt="" />
+                <img src="/images/about-us-image-1.jpg" alt="" />
               </figure>
             </div>
             {/* About Us Image End */}
             {/* Contact Us Circle Start */}
             <div className="contact-us-circle">
               <a href="contact.html">
-                <img src="images/contact-us-circle.svg" alt="" />
+                <img src="/images/contact-us-circle.svg" alt="" />
               </a>
             </div>
             {/* Contact Us Circle End */}
@@ -882,7 +872,7 @@ const Home = () => {
             {/* About Us Image Start */}
             <div className="about-us-image">
               <figure className="image-anime">
-                <img src="images/about-us-image-2.jpg" alt="" />
+                <img src="/images/about-us-image-2.jpg" alt="" />
               </figure>
             </div>
             {/* About Us Image End */}
@@ -1667,7 +1657,7 @@ const Home = () => {
                 }}
               >
                 <img
-                  src="images/about-us-body-image.jpg"
+                  src="/images/about-us-body-image.jpg"
                   alt=""
                   style={{
                     translate: "none",
@@ -2400,14 +2390,14 @@ const Home = () => {
           <div className="collection-item-image">
             <a href="collection.html" data-cursor-text="View">
               <figure>
-                <img src="images/collection-item-image-1.jpg" alt="" />
+                <img src="/images/collection-item-image-1.jpg" alt="" />
               </figure>
             </a>
           </div>
           <div className="collection-item-body">
             <div className="collection-item-btn">
               <a href="collection.html">
-                <img src="images/arrow-white.svg" alt="" />
+                <img src="/images/arrow-white.svg" alt="" />
               </a>
             </div>
             <div className="collection-item-content">
@@ -2434,14 +2424,14 @@ const Home = () => {
           <div className="collection-item-image">
             <a href="collection.html" data-cursor-text="View">
               <figure>
-                <img src="images/collection-item-image-2.jpg" alt="" />
+                <img src="/images/collection-item-image-2.jpg" alt="" />
               </figure>
             </a>
           </div>
           <div className="collection-item-body">
             <div className="collection-item-btn">
               <a href="collection.html">
-                <img src="images/arrow-white.svg" alt="" />
+                <img src="/images/arrow-white.svg" alt="" />
               </a>
             </div>
             <div className="collection-item-content">
@@ -2470,14 +2460,14 @@ const Home = () => {
           <div className="collection-item-image">
             <a href="collection.html" data-cursor-text="View">
               <figure>
-                <img src="images/collection-item-image-3.jpg" alt="" />
+                <img src="/images/collection-item-image-3.jpg" alt="" />
               </figure>
             </a>
           </div>
           <div className="collection-item-body">
             <div className="collection-item-btn">
               <a href="collection.html">
-                <img src="images/arrow-white.svg" alt="" />
+                <img src="/images/arrow-white.svg" alt="" />
               </a>
             </div>
             <div className="collection-item-content">
@@ -2508,11 +2498,11 @@ const Home = () => {
           <div className="satisfy-client-images">
             <div className="satisfy-client-image">
               <figure className="image-anime">
-                <img src="images/author-1.jpg" alt="" />
+                <img src="/images/author-1.jpg" alt="" />
               </figure>
             </div>
             <div className="satisfy-client-image add-more">
-              <img src="images/icon-phone-white.svg" alt="" />
+              <img src="/images/icon-phone-white.svg" alt="" />
             </div>
           </div>
           {/* Satisfy Client Images End */}
@@ -3313,7 +3303,7 @@ const Home = () => {
           {/* Why Choose Us Image Start */}
           <div className="why-choose-us-image">
             <figure className="image-anime">
-              <img src="images/why-choose-us-image.jpg" alt="" />
+              <img src="/images/why-choose-us-image.jpg" alt="" />
             </figure>
           </div>
           {/* Why Choose Us Image End */}
@@ -3323,22 +3313,22 @@ const Home = () => {
             <div className="satisfy-client-images">
               <div className="satisfy-client-image">
                 <figure className="image-anime">
-                  <img src="images/author-1.jpg" alt="" />
+                  <img src="/images/author-1.jpg" alt="" />
                 </figure>
               </div>
               <div className="satisfy-client-image">
                 <figure className="image-anime">
-                  <img src="images/author-2.jpg" alt="" />
+                  <img src="/images/author-2.jpg" alt="" />
                 </figure>
               </div>
               <div className="satisfy-client-image">
                 <figure className="image-anime">
-                  <img src="images/author-3.jpg" alt="" />
+                  <img src="/images/author-3.jpg" alt="" />
                 </figure>
               </div>
               <div className="satisfy-client-image">
                 <figure className="image-anime">
-                  <img src="images/author-4.jpg" alt="" />
+                  <img src="/images/author-4.jpg" alt="" />
                 </figure>
               </div>
             </div>
@@ -3370,22 +3360,22 @@ const Home = () => {
               <div className="satisfy-client-images">
                 <div className="satisfy-client-image">
                   <figure className="image-anime">
-                    <img src="images/author-1.jpg" alt="" />
+                    <img src="/images/author-1.jpg" alt="" />
                   </figure>
                 </div>
                 <div className="satisfy-client-image">
                   <figure className="image-anime">
-                    <img src="images/author-2.jpg" alt="" />
+                    <img src="/images/author-2.jpg" alt="" />
                   </figure>
                 </div>
                 <div className="satisfy-client-image">
                   <figure className="image-anime">
-                    <img src="images/author-3.jpg" alt="" />
+                    <img src="/images/author-3.jpg" alt="" />
                   </figure>
                 </div>
                 <div className="satisfy-client-image">
                   <figure className="image-anime">
-                    <img src="images/author-4.jpg" alt="" />
+                    <img src="/images/author-4.jpg" alt="" />
                   </figure>
                 </div>
               </div>
@@ -3441,7 +3431,7 @@ const Home = () => {
               {/* Why Choose Item Header Start */}
               <div className="why-choose-item-header">
                 <div className="icon-box">
-                  <img src="images/icon-why-choose-us-item-1.svg" alt="" />
+                  <img src="/images/icon-why-choose-us-item-1.svg" alt="" />
                 </div>
                 <div className="why-choose-item-title">
                   <h3>{text.supplyingTilesAcrossRiyadh}</h3>
@@ -3452,25 +3442,25 @@ const Home = () => {
               <div className="why-choose-country-flag-list">
                 <ul>
                   <li>
-                    <img src="images/why-choose-item-image-1.png" alt="" />
+                    <img src="/images/why-choose-item-image-1.png" alt="" />
                   </li>
                   <li>
-                    <img src="images/why-choose-item-image-2.png" alt="" />
+                    <img src="/images/why-choose-item-image-2.png" alt="" />
                   </li>
                   <li>
-                    <img src="images/why-choose-item-image-3.png" alt="" />
+                    <img src="/images/why-choose-item-image-3.png" alt="" />
                   </li>
                   <li>
-                    <img src="images/why-choose-item-image-4.png" alt="" />
+                    <img src="/images/why-choose-item-image-4.png" alt="" />
                   </li>
                   <li>
-                    <img src="images/why-choose-item-image-5.png" alt="" />
+                    <img src="/images/why-choose-item-image-5.png" alt="" />
                   </li>
                   <li>
-                    <img src="images/why-choose-item-image-6.png" alt="" />
+                    <img src="/images/why-choose-item-image-6.png" alt="" />
                   </li>
                   <li>
-                    <img src="images/why-choose-item-image-7.png" alt="" />
+                    <img src="/images/why-choose-item-image-7.png" alt="" />
                   </li>
                 </ul>
               </div>
@@ -3493,11 +3483,11 @@ const Home = () => {
             <div className="satisfy-client-images">
               <div className="satisfy-client-image">
                 <figure className="image-anime">
-                  <img src="images/author-1.jpg" alt="" />
+                  <img src="/images/author-1.jpg" alt="" />
                 </figure>
               </div>
               <div className="satisfy-client-image add-more">
-                <img src="images/icon-phone-white.svg" alt="" />
+                <img src="/images/icon-phone-white.svg" alt="" />
               </div>
             </div>
             {/* Satisfy Client Images End */}
@@ -3973,7 +3963,7 @@ const Home = () => {
           style={{ visibility: "visible", animationName: "fadeInUp" }}
         >
           <div className="icon-box">
-            <img src="images/icon-product-box-1.svg" alt="" />
+            <img src="/images/icon-product-box-1-silver.svg" alt="" />
           </div>
           <div className="product-box-content">
             <h2>
@@ -4004,7 +3994,7 @@ const Home = () => {
           }}
         >
           <div className="icon-box">
-            <img src="images/icon-product-box-2.svg" alt="" />
+            <img src="/images/icon-product-box-2-silver.svg" alt="" />
           </div>
           <div className="product-box-content">
             <h2>
@@ -4035,7 +4025,7 @@ const Home = () => {
           }}
         >
           <div className="icon-box">
-            <img src="images/icon-product-box-3.svg" alt="" />
+            <img src="/images/icon-product-box-3-silver.svg" alt="" />
           </div>
           <div className="product-box-content">
             <h2>
@@ -4099,7 +4089,7 @@ const Home = () => {
                   data-swiper-slide-index={1}
                 >
                   <div className="company-supports-logo">
-                    <img src="images/company-supports-logo-2.svg" alt="" />
+                    <img src="/images/company-supports-logo-2.svg" alt="" />
                   </div>
                 </div>
                 <div
@@ -4110,7 +4100,7 @@ const Home = () => {
                   data-swiper-slide-index={2}
                 >
                   <div className="company-supports-logo">
-                    <img src="images/company-supports-logo-3.svg" alt="" />
+                    <img src="/images/company-supports-logo-3.svg" alt="" />
                   </div>
                 </div>
                 <div
@@ -4121,7 +4111,7 @@ const Home = () => {
                   data-swiper-slide-index={3}
                 >
                   <div className="company-supports-logo">
-                    <img src="images/company-supports-logo-4.svg" alt="" />
+                    <img src="/images/company-supports-logo-4.svg" alt="" />
                   </div>
                 </div>
                 <div
@@ -4132,7 +4122,7 @@ const Home = () => {
                   data-swiper-slide-index={4}
                 >
                   <div className="company-supports-logo">
-                    <img src="images/company-supports-logo-5.svg" alt="" />
+                    <img src="/images/company-supports-logo-5.svg" alt="" />
                   </div>
                 </div>
                 <div
@@ -4143,7 +4133,7 @@ const Home = () => {
                   data-swiper-slide-index={5}
                 >
                   <div className="company-supports-logo">
-                    <img src="images/company-supports-logo-3.svg" alt="" />
+                    <img src="/images/company-supports-logo-3.svg" alt="" />
                   </div>
                 </div>
                 <div
@@ -4154,7 +4144,7 @@ const Home = () => {
                   data-swiper-slide-index={0}
                 >
                   <div className="company-supports-logo">
-                    <img src="images/company-supports-logo-1.svg" alt="" />
+                    <img src="/images/company-supports-logo-1.svg" alt="" />
                   </div>
                 </div>
               </div>
@@ -4189,7 +4179,7 @@ const Home = () => {
             {/* Product Qualities Image Start */}
             <div className="product-qualities-image">
               <figure className="image-anime">
-                <img src="images/our-product-qualities-image-1.jpg" alt="" />
+                <img src="/images/our-product-qualities-image-1.jpg" alt="" />
               </figure>
             </div>
             {/* Product Qualities Image End */}
@@ -4208,7 +4198,7 @@ const Home = () => {
             {/* Product Qualities Image Start */}
             <div className="product-qualities-image">
               <figure className="image-anime">
-                <img src="images/our-product-qualities-image-2.jpg" alt="" />
+                <img src="/images/our-product-qualities-image-2.jpg" alt="" />
               </figure>
             </div>
             {/* Product Qualities Image End */}
@@ -4964,14 +4954,14 @@ const Home = () => {
               <div className="product-qualities-item-bg-image">
                 <div className="icon-box">
                   <img
-                    src="images/icon-product-qualities-item-bg-1.svg"
+                    src="/images/icon-product-qualities-item-bg-1.svg"
                     alt=""
                   />
                 </div>
               </div>
               <div className="product-qualities-item-header">
                 <div className="icon-box">
-                  <img src="images/icon-product-qualities-item-1.svg" alt="" />
+                  <img src="/images/icon-product-qualities-item-1.svg" alt="" />
                 </div>
                 <div className="product-qualities-item-title">
                   <h3>{text.highlyEquipped}</h3>
@@ -4997,14 +4987,14 @@ const Home = () => {
               <div className="product-qualities-item-bg-image">
                 <div className="icon-box">
                   <img
-                    src="images/icon-product-qualities-item-bg-2.svg"
+                    src="/images/icon-product-qualities-item-bg-2.svg"
                     alt=""
                   />
                 </div>
               </div>
               <div className="product-qualities-item-header">
                 <div className="icon-box">
-                  <img src="images/icon-product-qualities-item-2.svg" alt="" />
+                  <img src="/images/icon-product-qualities-item-2.svg" alt="" />
                 </div>
                 <div className="product-qualities-item-title">
                   <h3>{text.skilledExperts}</h3>
@@ -5031,14 +5021,14 @@ const Home = () => {
               <div className="product-qualities-item-bg-image">
                 <div className="icon-box">
                   <img
-                    src="images/icon-product-qualities-item-bg-3.svg"
+                    src="/images/icon-product-qualities-item-bg-3.svg"
                     alt=""
                   />
                 </div>
               </div>
               <div className="product-qualities-item-header">
                 <div className="icon-box">
-                  <img src="images/icon-product-qualities-item-3.svg" alt="" />
+                  <img src="/images/icon-product-qualities-item-3.svg" alt="" />
                 </div>
                 <div className="product-qualities-item-title">
                   <h3>{text.riyadhServiceArea}</h3>
@@ -5065,14 +5055,14 @@ const Home = () => {
               <div className="product-qualities-item-bg-image">
                 <div className="icon-box">
                   <img
-                    src="images/icon-product-qualities-item-bg-4.svg"
+                    src="/images/icon-product-qualities-item-bg-4.svg"
                     alt=""
                   />
                 </div>
               </div>
               <div className="product-qualities-item-header">
                 <div className="icon-box">
-                  <img src="images/icon-product-qualities-item-4.svg" alt="" />
+                  <img src="/images/icon-product-qualities-item-4.svg" alt="" />
                 </div>
                 <div className="product-qualities-item-title">
                   <h3>{text.yearsExperience}</h3>
@@ -5260,7 +5250,7 @@ const Home = () => {
           {/* Core Features Image Start */}
           <div className="core-features-image">
             <figure className="image-anime">
-              <img src="images/our-core-features-image.jpg" alt="" />
+              <img src="/images/our-core-features-image.jpg" alt="" />
             </figure>
           </div>
           {/* Core Features Image End */}
@@ -5268,7 +5258,7 @@ const Home = () => {
           <div className="core-features-cta-box">
             {/* Core Features CTA Image Start */}
             <div className="core-features-cta-image">
-              <img src="images/icon-core-features-cta-box.svg" alt="" />
+              <img src="/images/icon-core-features-cta-box.svg" alt="" />
             </div>
             {/* Core Features CTA Image End */}
             {/* Core Features CTA Info Start */}
@@ -5981,7 +5971,7 @@ const Home = () => {
                   aria-expanded="true"
                   aria-controls="fcollapse1"
                 >
-                  <img src="images/icon-core-features-accordion-1.svg" alt="" />{" "}
+                  <img src="/images/icon-core-features-accordion-1.svg" alt="" />{" "}
                   Hygienic
                 </button>
               </h2>
@@ -6021,7 +6011,7 @@ const Home = () => {
                   aria-expanded="true"
                   aria-controls="fcollapse2"
                 >
-                  <img src="images/icon-core-features-accordion-2.svg" alt="" />{" "}
+                  <img src="/images/icon-core-features-accordion-2.svg" alt="" />{" "}
                   Easy To Clean
                 </button>
               </h2>
@@ -6061,7 +6051,7 @@ const Home = () => {
                   aria-expanded="true"
                   aria-controls="fcollapse3"
                 >
-                  <img src="images/icon-core-features-accordion-3.svg" alt="" />{" "}
+                  <img src="/images/icon-core-features-accordion-3.svg" alt="" />{" "}
                   Hygienic
                 </button>
               </h2>
@@ -6101,7 +6091,7 @@ const Home = () => {
                   aria-expanded="true"
                   aria-controls="fcollapse4"
                 >
-                  <img src="images/icon-core-features-accordion-4.svg" alt="" />{" "}
+                  <img src="/images/icon-core-features-accordion-4.svg" alt="" />{" "}
                   Impact Resistant
                 </button>
               </h2>
@@ -6853,7 +6843,7 @@ const Home = () => {
           style={{ visibility: "visible", animationName: "fadeInUp" }}
         >
           <a href="contact.html">
-            <img src="images/contact-us-cta-circle.svg" alt="" />
+            <img src="/images/contact-us-cta-circle.svg" alt="" />
           </a>
         </div>
         {/* Contact Us Circle End */}
@@ -6869,7 +6859,7 @@ const Home = () => {
           {/* CTA Box Counter Item Start */}
           <div className="cta-box-counter-item">
             <div className="icon-box">
-              <img src="images/icon-cta-box-1.svg" alt="" />
+              <img src="/images/icon-cta-box-1.svg" alt="" />
             </div>
             <div className="cta-box-counter-item-content">
               <h2>
@@ -6882,7 +6872,7 @@ const Home = () => {
           {/* CTA Box Counter Item Start */}
           <div className="cta-box-counter-item">
             <div className="icon-box">
-              <img src="images/icon-cta-box-2.svg" alt="" />
+              <img src="/images/icon-cta-box-2.svg" alt="" />
             </div>
             <div className="cta-box-counter-item-content">
               <h2>
@@ -6895,7 +6885,7 @@ const Home = () => {
           {/* CTA Box Counter Item Start */}
           <div className="cta-box-counter-item">
             <div className="icon-box">
-              <img src="images/icon-cta-box-3.svg" alt="" />
+              <img src="/images/icon-cta-box-3.svg" alt="" />
             </div>
             <div className="cta-box-counter-item-content">
               <h2>
@@ -7552,7 +7542,7 @@ const Home = () => {
         >
           <div className="partners-item-header">
             <div className="icon-box">
-              <img src="images/icon-our-partners-1.svg" alt="" />
+              <img src="/images/icon-our-partners-1.svg" alt="" />
             </div>
             <div className="partners-item-counter">
               <div className="partners-item-counter-number">
@@ -7587,7 +7577,7 @@ const Home = () => {
         >
           <div className="partners-item-header">
             <div className="icon-box">
-              <img src="images/icon-our-partners-2.svg" alt="" />
+              <img src="/images/icon-our-partners-2.svg" alt="" />
             </div>
             <div className="partners-item-counter">
               <div className="partners-item-counter-number">
@@ -7623,7 +7613,7 @@ const Home = () => {
         >
           <div className="partners-item-header">
             <div className="icon-box">
-              <img src="images/icon-our-partners-3.svg" alt="" />
+              <img src="/images/icon-our-partners-3.svg" alt="" />
             </div>
             <div className="partners-item-counter">
               <div className="partners-item-counter-number">
@@ -7660,11 +7650,11 @@ const Home = () => {
           <div className="satisfy-client-images">
             <div className="satisfy-client-image">
               <figure className="image-anime">
-                <img src="images/author-1.jpg" alt="" />
+                <img src="/images/author-1.jpg" alt="" />
               </figure>
             </div>
             <div className="satisfy-client-image add-more">
-              <img src="images/icon-phone-white.svg" alt="" />
+              <img src="/images/icon-phone-white.svg" alt="" />
             </div>
           </div>
           {/* Satisfy Client Images End */}
@@ -8124,11 +8114,11 @@ const Home = () => {
                   <div className="testimonial-item-header">
                     <div className="testimonial-author-image">
                       <figure className="image-anime">
-                        <img src="images/author-2.jpg" alt="" />
+                        <img src="/images/author-2.jpg" alt="" />
                       </figure>
                     </div>
                     <div className="testimonial-item-quote">
-                      <img src="images/testimonial-quote.svg" alt="" />
+                      <img src="/images/testimonial-quote.svg" alt="" />
                     </div>
                   </div>
                   <div className="testimonial-item-body">
@@ -8166,11 +8156,11 @@ const Home = () => {
                   <div className="testimonial-item-header">
                     <div className="testimonial-author-image">
                       <figure className="image-anime">
-                        <img src="images/author-3.jpg" alt="" />
+                        <img src="/images/author-3.jpg" alt="" />
                       </figure>
                     </div>
                     <div className="testimonial-item-quote">
-                      <img src="images/testimonial-quote.svg" alt="" />
+                      <img src="/images/testimonial-quote.svg" alt="" />
                     </div>
                   </div>
                   <div className="testimonial-item-body">
@@ -8208,11 +8198,11 @@ const Home = () => {
                   <div className="testimonial-item-header">
                     <div className="testimonial-author-image">
                       <figure className="image-anime">
-                        <img src="images/author-4.jpg" alt="" />
+                        <img src="/images/author-4.jpg" alt="" />
                       </figure>
                     </div>
                     <div className="testimonial-item-quote">
-                      <img src="images/testimonial-quote.svg" alt="" />
+                      <img src="/images/testimonial-quote.svg" alt="" />
                     </div>
                   </div>
                   <div className="testimonial-item-body">
@@ -8250,11 +8240,11 @@ const Home = () => {
                   <div className="testimonial-item-header">
                     <div className="testimonial-author-image">
                       <figure className="image-anime">
-                        <img src="images/author-1.jpg" alt="" />
+                        <img src="/images/author-1.jpg" alt="" />
                       </figure>
                     </div>
                     <div className="testimonial-item-quote">
-                      <img src="images/testimonial-quote.svg" alt="" />
+                      <img src="/images/testimonial-quote.svg" alt="" />
                     </div>
                   </div>
                   <div className="testimonial-item-body">
@@ -8305,11 +8295,11 @@ const Home = () => {
           <div className="satisfy-client-images">
             <div className="satisfy-client-image">
               <figure className="image-anime">
-                <img src="images/author-1.jpg" alt="" />
+                <img src="/images/author-1.jpg" alt="" />
               </figure>
             </div>
             <div className="satisfy-client-image add-more">
-              <img src="images/icon-phone-white.svg" alt="" />
+              <img src="/images/icon-phone-white.svg" alt="" />
             </div>
           </div>
           {/* Satisfy Client Images End */}
@@ -8984,7 +8974,7 @@ const Home = () => {
           <div className="post-featured-image">
             <a href="blog-single.html" data-cursor-text="View">
               <figure>
-                <img src="images/post-1.jpg" alt="" />
+                <img src="/images/post-1.jpg" alt="" />
               </figure>
             </a>
           </div>
@@ -9027,7 +9017,7 @@ const Home = () => {
           <div className="post-featured-image">
             <a href="blog-single.html" data-cursor-text="View">
               <figure>
-                <img src="images/post-2.jpg" alt="" />
+                <img src="/images/post-2.jpg" alt="" />
               </figure>
             </a>
           </div>
@@ -9070,7 +9060,7 @@ const Home = () => {
           <div className="post-featured-image">
             <a href="blog-single.html" data-cursor-text="View">
               <figure>
-                <img src="images/post-3.jpg" alt="" />
+                <img src="/images/post-3.jpg" alt="" />
               </figure>
             </a>
           </div>
