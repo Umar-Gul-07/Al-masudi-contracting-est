@@ -28,6 +28,32 @@ function Base({ children }) {
     const { language } = useLanguage()
 
     React.useEffect(() => {
+        const hidePreloader = () => {
+            const preloader = document.querySelector('.preloader')
+            if (!preloader || preloader.dataset.hidden === 'true') {
+                return
+            }
+
+            preloader.dataset.hidden = 'true'
+            preloader.style.transition = 'opacity 0.5s ease'
+            preloader.style.opacity = '0'
+            preloader.style.pointerEvents = 'none'
+
+            window.setTimeout(() => {
+                preloader.style.display = 'none'
+            }, 500)
+        }
+
+        const readyTimer = window.setTimeout(hidePreloader, 400)
+        const fallbackTimer = window.setTimeout(hidePreloader, 2500)
+
+        return () => {
+            window.clearTimeout(readyTimer)
+            window.clearTimeout(fallbackTimer)
+        }
+    }, [])
+
+    React.useEffect(() => {
         const localizedTitles = pageTitles[language] || pageTitles.en
         const title =
             localizedTitles[location.pathname] ||
@@ -42,7 +68,6 @@ function Base({ children }) {
 
     return (
         <>
-            <div id="google_translate_element" />
             <div className="preloader">
                 <div className="loading-container">
                     <div className="loading" />
