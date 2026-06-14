@@ -3,8 +3,8 @@ import { useLanguage } from "../../Utils/Language";
 
 const WHATSAPP_DISMISSED_KEY = "whatsapp-widget-dismissed";
 const WHATSAPP_FIRST_MESSAGE_DELAY = 12000;
-const WHATSAPP_SECOND_MESSAGE_DELAY = 26000;
-const WHATSAPP_TYPING_DELAY = 24500;
+const WHATSAPP_SECOND_MESSAGE_DELAY = 27000;
+const WHATSAPP_TYPING_DELAY = 25500;
 
 const playNotificationSound = () => {
   try {
