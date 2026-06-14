@@ -1,4 +1,5 @@
 import React, { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState } from "react";
+import { startGoogleTranslateUiSuppression, stopGoogleTranslateUiSuppression } from "./suppressGoogleTranslateUi";
 
 const LANGUAGE_STORAGE_KEY = "site-language";
 const DEFAULT_LANGUAGE = "en";
@@ -210,6 +211,14 @@ export function LanguageProvider({ children }) {
     const nextLanguage = languageRef.current === DEFAULT_LANGUAGE ? TARGET_LANGUAGE : DEFAULT_LANGUAGE;
     await setLanguage(nextLanguage);
   }, [setLanguage]);
+
+  useEffect(() => {
+    startGoogleTranslateUiSuppression();
+
+    return () => {
+      stopGoogleTranslateUiSuppression();
+    };
+  }, []);
 
   useEffect(() => {
     languageRef.current = language;

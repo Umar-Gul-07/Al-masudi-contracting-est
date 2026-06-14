@@ -1,6 +1,11 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { useLanguage } from "../../Utils/Language";
 
+const WHATSAPP_DISMISSED_KEY = "whatsapp-widget-dismissed";
+const WHATSAPP_FIRST_MESSAGE_DELAY = 12000;
+const WHATSAPP_SECOND_MESSAGE_DELAY = 26000;
+const WHATSAPP_TYPING_DELAY = 24500;
+
 const playNotificationSound = () => {
   try {
     const AudioCtx = window.AudioContext || window.webkitAudioContext;
@@ -14,16 +19,16 @@ const playNotificationSound = () => {
       oscillator.connect(gain);
       gain.connect(ctx.destination);
       oscillator.type = "sine";
-      oscillator.frequency.value = 880;
+      oscillator.frequency.value = 740;
       gain.gain.setValueAtTime(0.0001, ctx.currentTime);
-      gain.gain.exponentialRampToValueAtTime(0.22, ctx.currentTime + 0.02);
-      gain.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + 0.35);
+      gain.gain.exponentialRampToValueAtTime(0.12, ctx.currentTime + 0.02);
+      gain.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + 0.28);
       oscillator.start(ctx.currentTime);
-      oscillator.stop(ctx.currentTime + 0.35);
+      oscillator.stop(ctx.currentTime + 0.28);
 
       window.setTimeout(() => {
         ctx.close();
-      }, 500);
+      }, 400);
     };
 
     if (ctx.state === "suspended") {
@@ -55,9 +60,12 @@ const unlockNotificationAudio = () => {
 
 const FOOTER_COPY = {
   en: {
-    autoMessage1: "Hello! Thanks for visiting our website.",
+    widgetTitle: "Tilux Support",
+    widgetStatus: "Typically replies within an hour",
+    autoMessage1: "Hello! Thank you for visiting Tilux.",
     autoMessage2:
-      "Need tile or marble installation in Riyadh? Tap below to message us on WhatsApp — we are happy to help!",
+      "If you need tile or marble installation in Riyadh, we would be happy to help. Tap below to start a WhatsApp chat.",
+    typingLabel: "Support is typing",
     defaultMessage:
       "Hello, I need tile and marble installation service in Riyadh. Can you please help me?",
     cta: "Send Message on WhatsApp",
@@ -85,9 +93,12 @@ const FOOTER_COPY = {
     outdoorTiles: "Outdoor Tiles",
   },
   ar: {
-    autoMessage1: "مرحبًا! شكرًا لزيارتكم موقعنا.",
+    widgetTitle: "دعم تيلوكس",
+    widgetStatus: "نرد عادةً خلال ساعة",
+    autoMessage1: "مرحبًا! شكرًا لزيارتكم موقع تيلوكس.",
     autoMessage2:
-      "هل تحتاج تركيب بلاط أو رخام في الرياض؟ اضغط أدناه للمراسلة على واتساب — يسعدنا مساعدتك!",
+      "إذا كنتم تحتاجون تركيب بلاط أو رخام في الرياض، يسعدنا مساعدتكم. اضغطوا أدناه لبدء محادثة واتساب.",
+    typingLabel: "الدعم يكتب الآن",
     defaultMessage:
       "مرحبًا، أحتاج خدمة تركيب بلاط ورخام في الرياض. هل يمكنكم مساعدتي؟",
     cta: "إرسال رسالة على واتساب",
@@ -123,6 +134,7 @@ function Footer() {
     const text = FOOTER_COPY[langKey];
     const [isPromptOpen, setIsPromptOpen] = useState(false);
     const [promptStage, setPromptStage] = useState(0);
+    const [isTyping, setIsTyping] = useState(false);
     const [hasUnreadPrompt, setHasUnreadPrompt] = useState(false);
     const promptContent = useMemo(() => FOOTER_COPY[langKey], [langKey]);
 
@@ -141,8 +153,15 @@ function Footer() {
 
       window.addEventListener("pointerdown", handleUnlockAudio, { once: true });
 
+      if (sessionStorage.getItem(WHATSAPP_DISMISSED_KEY) === "1") {
+        return () => {
+          window.removeEventListener("pointerdown", handleUnlockAudio);
+        };
+      }
+
       setIsPromptOpen(false);
       setPromptStage(0);
+      setIsTyping(false);
       setHasUnreadPrompt(false);
 
       const firstTimer = window.setTimeout(() => {
@@ -150,17 +169,23 @@ function Footer() {
         setPromptStage(1);
         setHasUnreadPrompt(true);
         playNotificationSound();
-      }, 2000);
+      }, WHATSAPP_FIRST_MESSAGE_DELAY);
+
+      const typingTimer = window.setTimeout(() => {
+        setIsTyping(true);
+      }, WHATSAPP_TYPING_DELAY);
 
       const secondTimer = window.setTimeout(() => {
+        setIsTyping(false);
         setPromptStage(2);
         setHasUnreadPrompt(true);
         playNotificationSound();
-      }, 5000);
+      }, WHATSAPP_SECOND_MESSAGE_DELAY);
 
       return () => {
         window.removeEventListener("pointerdown", handleUnlockAudio);
         window.clearTimeout(firstTimer);
+        window.clearTimeout(typingTimer);
         window.clearTimeout(secondTimer);
       };
     }, [langKey]);
@@ -174,7 +199,9 @@ function Footer() {
     const handlePromptClose = (event) => {
       event.preventDefault();
       event.stopPropagation();
+      sessionStorage.setItem(WHATSAPP_DISMISSED_KEY, "1");
       setIsPromptOpen(false);
+      setIsTyping(false);
       setHasUnreadPrompt(false);
     };
 
@@ -272,18 +299,31 @@ function Footer() {
 <div className="whatsapp-widget">
   {isPromptOpen && (
     <div className="whatsapp-prompt-bubble" role="dialog" aria-live="polite">
-      <button
-        type="button"
-        className="whatsapp-prompt-close"
-        aria-label={langKey === "ar" ? "إغلاق" : "Close"}
-        onClick={handlePromptClose}
-      >
-        ×
-      </button>
+      <div className="whatsapp-prompt-header">
+        <div>
+          <strong className="whatsapp-prompt-brand">{promptContent.widgetTitle}</strong>
+          <span className="whatsapp-prompt-status">{promptContent.widgetStatus}</span>
+        </div>
+        <button
+          type="button"
+          className="whatsapp-prompt-close"
+          aria-label={langKey === "ar" ? "إغلاق" : "Close"}
+          onClick={handlePromptClose}
+        >
+          ×
+        </button>
+      </div>
       <div className="whatsapp-prompt-messages">
         {promptStage >= 1 && (
           <div className="whatsapp-prompt-message whatsapp-prompt-message--incoming">
             <span>{promptContent.autoMessage1}</span>
+          </div>
+        )}
+        {isTyping && promptStage < 2 && (
+          <div className="whatsapp-prompt-typing" aria-label={promptContent.typingLabel}>
+            <span />
+            <span />
+            <span />
           </div>
         )}
         {promptStage >= 2 && (
@@ -292,15 +332,17 @@ function Footer() {
           </div>
         )}
       </div>
-      <a
-        href={whatsappLink}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="whatsapp-prompt-cta"
-        onClick={() => setHasUnreadPrompt(false)}
-      >
-        {promptContent.cta}
-      </a>
+      {promptStage >= 2 && (
+        <a
+          href={whatsappLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="whatsapp-prompt-cta"
+          onClick={() => setHasUnreadPrompt(false)}
+        >
+          {promptContent.cta}
+        </a>
+      )}
     </div>
   )}
 
